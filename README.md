@@ -1,11 +1,11 @@
 # TO install this project
-<code>
-    mkdir STEPS_WEB
-    cd STEPS_WEB
-    python3 -m virtualenv .
-    source bin/activate
-    git clone https://github.com/Anikcsejnu/STEPS.git
-    cd STPES
-    pip3 install -r requirement.txt
-    ./manage.py runserver
-</code>
+
+**mkdir STEPS_WEB**</br>
+**cd STEPS_WEB**</br>
+**python3 -m virtualenv**</br>
+**source bin/activate**</br>
+**git clone https://github.com/Anikcsejnu/STEPS.git**</br>
+**cd STPES**</br>
+**pip3 install -r requirement.txt**</br>
+**./manage.py runserver**</br>
+
