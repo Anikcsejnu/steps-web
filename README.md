@@ -2,7 +2,7 @@
 
 **mkdir STEPS_WEB**</br>
 **cd STEPS_WEB**</br>
-**python3 -m virtualenv**</br>
+**python3 -m virtualenv .**</br>
 **source bin/activate**</br>
 **git clone https://github.com/Anikcsejnu/STEPS.git**</br>
 **cd STPES**</br>
