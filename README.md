@@ -9,3 +9,6 @@
 **pip3 install -r requirement.txt**</br>
 **./manage.py runserver**</br>
 
+# Stay home keep coding<br>
+
+
