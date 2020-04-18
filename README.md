@@ -1,5 +1,5 @@
 # TO install this project use the command lines
--------For Linux(Terminal)-------
+# -------For Linux(Terminal)-------
 **mkdir STEPS_WEB**</br>
 **cd STEPS_WEB**</br>
 **python3 -m virtualenv .**</br>
@@ -9,7 +9,7 @@
 **pip3 install -r requirement.txt**</br>
 **./manage.py runserver**</br>
 
--------For Windows(CMD)-------
+# -------For Windows(CMD)-------
 **mkdir STEPS_WEB**</br>
 **cd STEPS_WEB**</br>
 **virtualenv .**</br>
