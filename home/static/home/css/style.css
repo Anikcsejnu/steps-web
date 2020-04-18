@@ -16,12 +16,19 @@ VERSION:	Versoin Number
   font-style: normal;
 }
 
+
 body {
   line-height: 1.2;
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 15px;
   color: #5c5c77;
+}
+
+abbr[title] {
+  border-bottom: none !important;
+  cursor: inherit !important;
+  text-decoration: none !important;
 }
 
 p, .paragraph {
