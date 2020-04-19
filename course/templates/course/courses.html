@@ -1,0 +1,69 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="courses.html">Our Courses</a>
+          </li>
+          <li class="list-inline-item text-white h3 font-secondary "></li>
+        </ul>
+        <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some
+          universities and the emphasis placed on final exams by others.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+<!-- courses -->
+<section class="section">
+  <div class="container">
+    <div class="row ">
+      <div class="col-12">
+        <!-- course category list -->
+        <ul class="list-inline text-center filter-controls mb-5">
+          <li class="list-inline-item m-3 text-uppercase active" data-filter="all">All</li>
+          <li class="list-inline-item m-3 text-uppercase" data-filter="SCIENCE">SCIENCE</li>
+          <li class="list-inline-item m-3 text-uppercase" data-filter="BUSINESS STUDIES">BUSINESS STUDIES</li>
+          <li class="list-inline-item m-3 text-uppercase" data-filter="ENGLISH">English</li>
+          {% if flag %}
+          <li class="list-inline-item m-3 text-uppercase" data-filter="ICT">ICT</li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    <!-- course list -->
+    <div class="row filtr-container">
+      <!-- course item -->
+      {% for course in course_list %}
+        <div data-category="{{ course.dept }}" class="col-lg-4 col-sm-6 mb-5 filtr-item">
+          <div class="card p-0 border-primary rounded-0 hover-shadow">
+            <img class="card-img-top rounded-0" src="{% static 'home/images/courses/course-1.jpg' %}" alt="course thumb">
+            <div class="card-body">
+              <ul class="list-inline mb-2">
+                <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
+                <li class="list-inline-item"><a class="text-color" href="#">{{ course.dept }}</a></li>
+              </ul>
+              <a href="{% url 'courseSingle' %}">
+                <h4 class="card-title">{{ course.name }}</h4>
+              </a>
+              <p class="card-text mb-4"> {{ course.short_details }}</p>
+              <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+      <!-- /course list -->
+    </div>
+  </div>
+</section>
+<!-- /courses -->
+
+{% endblock content %}
