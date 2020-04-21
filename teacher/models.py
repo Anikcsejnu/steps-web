@@ -26,7 +26,7 @@ for r in range(2010, (datetime.datetime.now().year+5)):
 def contact_default():
    return {"email": "to1@example.com"}
 
-class Teacher_detail(models.Model):
+class TeachersInfo(models.Model):
 	name = models.CharField(max_length=100)
 	institute = models.CharField(max_length=100)
 	subject = models.CharField(max_length=100)
