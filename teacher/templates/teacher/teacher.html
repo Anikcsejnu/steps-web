@@ -46,18 +46,26 @@
             <div class="card border-0 rounded-0 hover-shadow">
               <img class="card-img-top rounded-0" src="{{ teacher_detail.image.url }}" alt="teacher">
               <div class="card-body">
-                <a href="teacher-single.html">
+                <a href="{% url 'teacher' teacher_detail.id %}">
                   <h4 class="card-title">{{ teacher_detail.name }}</h4>
                 </a>
 
-                <p><h6>{{ teacher_detail.mentoring_subject }} Mentor</h6>
+                <p><h6>
+                {% for subject in teacher_detail.mentoring_subject %}
+                    {% if forloop.last %}
+                      {{ subject }}
+                    {% else %}
+                      {{ subject }},
+                    {% endif %}
+                {% endfor %} 
+                </h6>
                 {{ teacher_detail.subject }}, {{  teacher_detail.institute }}</p>
                 <ul class="list-inline">
                   <li class="list-inline-item"><a class="text-color" 
-                    href="{{ teacher_detail.fb_link }}">
+                    href="{{ teacher_detail.fb_link }}" target="_blank">
                     <i class="ti-facebook"></i></a></li>
                   <li class="list-inline-item"><a class="text-color" 
-                    href="{{ teacher_detail.linkedin_link }}">
+                    href="{{ teacher_detail.linkedin_link }}" target="_blank">
                     <i class="ti-linkedin"></i></a></li>
                   <li class="list-inline-item"><abbr title="{{ teacher_detail.email }}">
                     <i class="ti-email"></i></abbr></li>
