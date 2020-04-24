@@ -3,6 +3,7 @@ from django import forms
 from django.utils import timezone
 import datetime
 from PIL import Image
+from django_mysql.models import ListTextField, ListCharField
 
 # Create your models here.
 
@@ -23,8 +24,10 @@ YEAR_CHOICES = []
 for r in range(2010, (datetime.datetime.now().year+5)):
     YEAR_CHOICES.append((r,r))
 
+
 def contact_default():
    return {"email": "to1@example.com"}
+
 
 class TeachersInfo(models.Model):
 	name = models.CharField(max_length=100)
@@ -39,12 +42,25 @@ class TeachersInfo(models.Model):
 								   default=datetime.datetime.now().year)
 	date_of_birth = models.DateField(max_length=8, default=timezone.now)
 
-	mentoring_subject = models.CharField(max_length=100)
+	mentoring_subject = ListCharField(
+        base_field = models.CharField(max_length=20),
+        size=6,
+        max_length=(6 * 21)  # Maximum of 100 ids in list
+        #default='Test',
+    )
 	level = models.CharField(max_length=100, choices=LEVEL_CHOICES, default="hsc")
 	deparment = models.CharField(max_length=100,
 								choices=DEPARTMENT_CHOICES,
 								default="Science")
+
+	summary_of_activites = ListTextField(
+        base_field = models.CharField(max_length=100),
+        size=100  # Maximum of 100 ids in list
+        #default='Test',
+    )
+
 	email = models.EmailField(max_length=100)
+	address = models.CharField(max_length=255, help_text='Enter your address')
 	contact_no = models.CharField(max_length=20, help_text='Enter contact no')
 	fb_link = models.CharField(max_length=255, help_text='Enter facebook profile link')
 	linkedin_link = models.CharField(max_length=255,help_text='Enter linkedin 	profile link' )
@@ -64,21 +80,3 @@ class TeachersInfo(models.Model):
 			img = img.resize((371, 418), Image.ANTIALIAS)
 			# img.thumbnail(output_size)
 			img.save(self.image.path)
-
-
-
-
-
-
-# a. Name
-# b. Institute
-# c. Subject
-# d. Mentor of
-# e. DOB
-# f. College
-# g. School
-# h. Contact Number
-# i. Email
-# j. Image
-# k. Bio
-
