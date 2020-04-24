@@ -30,9 +30,16 @@
       <div class="col-md-6 mb-5">
         <h3>{{ object.name }}</h3>
         <h6 class="text-color">{{ object.subject }}, {{ object.institute }}</h6>
-        <p class="mb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque accusamus tenetur ea harum
-          delectus ab consequatur excepturi, odit qui in quo quia voluptate nam optio, culpa aspernatur. Error placeat
-          iusto officia voluptas quae.</p>
+        <p class="mb-5">Here is a short description of our great mentor <big>{{ object.name }}</big> . He is a mentor of 
+          <big>
+            {% for subject in object.mentoring_subject %}
+              {% if forloop.last %}
+                 {{ subject }}
+              {% else %}
+                 {{ subject }},
+              {% endif %}
+            {% endfor %}
+            </big> at steps. He has completed  H.S.C from <big>{{ object.college }}</big> in {{ object.hsc_year }} and S.S.C from <big>{{ object.school }}</big> in {{ object.ssc_year }}</p>
         <div class="row">
           <div class="col-md-6 mb-5 mb-md-0">
             <h4 class="mb-4">CONTACT INFO:</h4>
@@ -41,28 +48,22 @@
               <li class="mb-3"><a class="text-color" href="callto:+{{ object.contact_no }}"><i class="ti-mobile mr-2"></i>+ {{ object.contact_no }}</a></li>
               <li class="mb-3"><a class="text-color" href="{{ object.fb_link }}" target="_blank"><i class="ti-facebook mr-2"></i>{{ object.name }}</a></li>
               <li class="mb-3"><a class="text-color" href="{{ object.linkedin_link }}" target="_blank"><i class="ti-linkedin mr-2"></i>{{ object.name }}</a></li>
-              <li class="mb-3"><a class="text-color" href="#"><i class="ti-location-pin mr-2"></i>1313 Boulevard
-                  Cremazie,Quebec</a></li>
+              <li class="mb-3"><a class="text-color" ><i class="ti-location-pin mr-2">{{ object.address }}</i></a></li>
             </ul>
           </div>
           <div class="col-md-6">
             <h4 class="mb-4">SUMMARY OF ACTIVITIES/INTERESTS</h4>
             <ul class="list-unstyled">
-              <li class="mb-3">Computer Networking</li>
-              <li class="mb-3">Computer Security</li>
-              <li class="mb-3">Human Computer Interfacing</li>
+              {% for activites in object.summary_of_activites %}
+                  <li class="mb-3"><h6>{{ activites }}<h6></li>
+              {% endfor %}
             </ul>
           </div>
         </div>
       </div>
       <div class="col-12">
         <h4 class="mb-4">BIOGRAPHY</h4>
-        <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-          anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-          laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+        <p class="mb-5">{{ object.bio }}</p>
       </div>
     </div>
     <div class="row justify-content-center">
