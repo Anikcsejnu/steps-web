@@ -50,7 +50,15 @@
                   <h4 class="card-title">{{ teacher_detail.name }}</h4>
                 </a>
 
-                <p><h6>{{ teacher_detail.mentoring_subject }} Mentor</h6>
+                <p><h6>
+                {% for subject in teacher_detail.mentoring_subject %}
+                    {% if forloop.last %}
+                      {{ subject }}
+                    {% else %}
+                      {{ subject }},
+                    {% endif %}
+                {% endfor %} 
+                </h6>
                 {{ teacher_detail.subject }}, {{  teacher_detail.institute }}</p>
                 <ul class="list-inline">
                   <li class="list-inline-item"><a class="text-color" 
