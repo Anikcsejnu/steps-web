@@ -18,7 +18,7 @@ cd Scripts</br>
 activate.bat</br>
 cd ..</br>
 git clone https://github.com/Anikcsejnu/STEPS.git</br>
-cd STEPS**</br>
+cd STEPS</br>
 pip3 install -r requirement.txt</br>
 python manage.py runserver</br>
 '''
