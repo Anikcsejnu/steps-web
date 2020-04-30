@@ -17,11 +17,6 @@
   </section>
 
   <div class="list-group ">
-    {% for list in chapterlist %} 
-      <p>{{ list.nameOfCourse }} {{ coursename }}</p>
-      {% if list.nameOfCourse == coursename %}<!-- Error found here not comparing -->
-        <a href="#" class="list-group-item list-group-item-action">{{ list.nameOfChapters }}</a>
-      {% endif %}
-    {% endfor %}
+    
   </div>
 {% endblock %}
