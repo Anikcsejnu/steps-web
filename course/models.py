@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from teacher.models import TeachersInfo
 
 # Create your models here.
 
@@ -16,7 +17,7 @@ LEVEL_CHOICES = (
 
 )
 
-class course(models.Model):
+class Course(models.Model):
     name = models.CharField(max_length = 200)
     short_details = models.CharField(max_length = 1000)
     dept = models.CharField(max_length = 100, choices = DEPARTMENT_CHOICES, default = 'Science')
@@ -28,13 +29,21 @@ class course(models.Model):
     
 
     
-class chapterlist(models.Model):
-    nameOfCourse = models.ForeignKey(course, on_delete = models.CASCADE)
-    nameOfChapters = models.CharField(max_length = 100)
+class Chapter(models.Model):
+    name_of_course = models.ForeignKey(Course, on_delete = models.CASCADE)
+    name_of_chapter = models.CharField(max_length = 100)
 
     def __str__(self):
-        return self.nameOfChapters
+        return self.name_of_chapter
 
     
 
+    
+class Topic(models.Model):
+    name_of_teacher = models.ManyToManyField(TeachersInfo)
+    name_of_chapter = models.ForeignKey(Chapter, on_delete = models.CASCADE)
+    name_of_topic = models.CharField(max_length = 200)
+
+    def __str__(self):
+        return self.name_of_topic
     
