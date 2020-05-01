@@ -22,10 +22,10 @@ def teacher_ssc(request):
 class TeacherDetialsView(DetailView):
 	model = TeachersInfo
 
-	href = "https://www.facebook.com/faruqueparvej15?ref=br_tf&epa=SEARCH_BOX"
-	username = href.split('/')[-1]
-	username = username.split('?')
-	print(username[0])
+	# href = "https://www.facebook.com/faruqueparvej15?ref=br_tf&epa=SEARCH_BOX"
+	# username = href.split('/')[-1]
+	# username = username.split('?')
+	# print(username[0])
 
 
 
