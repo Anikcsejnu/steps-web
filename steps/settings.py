@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'teacher.apps.TeacherConfig',
     'course.apps.CourseConfig',
+    'events.apps.EventsConfig',
 ]
 
 MIDDLEWARE = [
