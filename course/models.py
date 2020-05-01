@@ -40,7 +40,7 @@ class Chapter(models.Model):
 
     
 class Topic(models.Model):
-    name_of_teacher = models.ManyToManyField(TeachersInfo)
+    name_of_teacher = models.ManyToManyField(TeachersInfo, blank=True)
     name_of_chapter = models.ForeignKey(Chapter, on_delete = models.CASCADE)
     name_of_topic = models.CharField(max_length = 200)
 

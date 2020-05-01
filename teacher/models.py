@@ -66,7 +66,7 @@ class TeachersInfo(models.Model):
 	linkedin_link = models.CharField(max_length=255,help_text='Enter linkedin 	profile link' )
 	bio = models.TextField()
 	image = models.ImageField(default='default.jpg', upload_to='teachers_pic')
-
+	
 	def __str__(self):
 		return self.name
 
