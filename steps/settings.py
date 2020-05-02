@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'teacher.apps.TeacherConfig',
     'course.apps.CourseConfig',
     'events.apps.EventsConfig',
+    'six',
+    'smart_selects',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +129,5 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+USE_DJANGO_JQUERY = True
