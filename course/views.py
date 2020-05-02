@@ -40,3 +40,4 @@ def topic_single(request, topicname):
     context = Topic.objects.filter(name_of_topic=topicname)
     print(context[0].name_of_chapter)
     return render(request, 'course/course-single.html', { 'topic':context[0] })
+

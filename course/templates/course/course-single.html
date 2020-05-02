@@ -3,6 +3,8 @@
 {% block content %}
 
 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
 
 <!-- page title -->
 <section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
@@ -10,7 +12,8 @@
     <div class="row">
       <div class="col-md-8">
         <ul class="list-inline custom-breadcrumb">
-          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="courses.html">Our Courses</a></li>
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="courses.html">Our Courses</a>
+          </li>
           <li class="list-inline-item text-white h3 font-secondary nasted">{{ topic.name_of_topic }}</li>
         </ul>
         <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some
@@ -23,89 +26,89 @@
 
 <!-- section -->
 <section class="section-sm">
-  
-    <!-- course info -->
+
+  <!-- course info -->
   <div class="row align-items-center mb-10 border-bottom border-primary >
-      <div class="row align-items-center ">
-        <div class="col-xl-3 order-1 col-sm-6 mb-4 mb-xl-0">
-          <h2>{{ topic.name_of_topic }}</h2>
-        </div>
-        <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2">
-          <ul class="list-inline text-xl-center">
-            <li class="list-inline-item mr-4 mb-3 mb-sm-0">
-              <div class="d-flex align-items-center">
-                <i class="ti-book text-primary icon-md mr-2"></i>
-                <div class="text-left">
-                  <h6 class="mb-0">Taken By</h6>
-                  <p class="mb-0">{{ topic.name_of_teacher.name }}</p>
-                </div>
-              </div>
-            </li>
-            <li class="list-inline-item mr-4 mb-3 mb-sm-0">
-              <div class="d-flex align-items-center">
-                <i class="ti-alarm-clock text-primary icon-md mr-2"></i>
-                <div class="text-left">
-                  <h6 class="mb-0">DURATION</h6>
-                  <p class="mb-0">03 Hours</p>
-                </div>
-              </div>
-            </li>
-            <li class="list-inline-item mr-4 mb-3 mb-sm-0">
-              <div class="d-flex align-items-center">
-                <i class="ti-wallet text-primary icon-md mr-2"></i>
-                <div class="text-left">
-                  <h6 class="mb-0">FEE</h6>
-                  <p class="mb-0">From: $699</p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="col-xl-3 text-sm-right text-left order-sm-2 order-3 order-xl-3 col-sm-6 mb-4 mb-xl-0">
-          <a href="#" class="btn btn-primary">Apply now</a>
-        </div>
+      <div class=" row align-items-center ">
+        <div class=" col-xl-3 order-1 col-sm-6 mb-4 mb-xl-0">
+    <h2>{{ topic.name_of_topic }}</h2>
   </div>
-  <div class="row align-items-center mb-10 border-bottom border-primary >
-    <div class="row align-items-center mb-5">
-      <div class="col-xl-3 order-1 col-sm-6 mb-4 mb-xl-0">
-        <h2>{{ topic.name_of_topic }}</h2>
-      </div>
-      <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2">
-        <ul class="list-inline text-xl-center">
-          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
-            <div class="d-flex align-items-center">
-              <i class="ti-book text-primary icon-md mr-2"></i>
-              <div class="text-left">
-                <h6 class="mb-0">Taken By</h6>
-                <p class="mb-0">{{ topic.name_of_chapter }}</p>
-              </div>
+  <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2">
+    <ul class="list-inline text-xl-center">
+      <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+        <div class="d-flex align-items-center">
+          <i class="ti-book text-primary icon-md mr-2"></i>
+          <div class="text-left">
+            <h6 class="mb-0">Taken By</h6>
+            <p class="mb-0">{{ topic.name_of_teacher.name }}</p>
+          </div>
+        </div>
+      </li>
+      <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+        <div class="d-flex align-items-center">
+          <i class="ti-alarm-clock text-primary icon-md mr-2"></i>
+          <div class="text-left">
+            <h6 class="mb-0">DURATION</h6>
+            <p class="mb-0">03 Hours</p>
+          </div>
+        </div>
+      </li>
+      <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+        <div class="d-flex align-items-center">
+          <i class="ti-wallet text-primary icon-md mr-2"></i>
+          <div class="text-left">
+            <h6 class="mb-0">FEE</h6>
+            <p class="mb-0">From: $699</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-xl-3 text-sm-right text-left order-sm-2 order-3 order-xl-3 col-sm-6 mb-4 mb-xl-0">
+    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal1">Apply now</a>
+    <!--Modal: Name-->
+    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+
+        <!--Content-->
+        <div class="modal-content">
+
+          <!--Body-->
+          <div class="modal-body mb-0 p-0">
+
+            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/A3PDXmYoF5U"
+                allowfullscreen></iframe>
             </div>
-          </li>
-          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
-            <div class="d-flex align-items-center">
-              <i class="ti-alarm-clock text-primary icon-md mr-2"></i>
-              <div class="text-left">
-                <h6 class="mb-0">DURATION</h6>
-                <p class="mb-0">03 Hours</p>
-              </div>
-            </div>
-          </li>
-          <li class="list-inline-item mr-4 mb-3 mb-sm-0">
-            <div class="d-flex align-items-center">
-              <i class="ti-wallet text-primary icon-md mr-2"></i>
-              <div class="text-left">
-                <h6 class="mb-0">FEE</h6>
-                <p class="mb-0">From: $699</p>
-              </div>
-            </div>
-          </li>
-        </ul>
+
+          </div>
+
+          <!--Footer-->
+          <div class="modal-footer justify-content-center">
+            <span class="mr-4">Spread the word!</span>
+            <a type="button" class="btn-floating btn-sm btn-fb"><i class="fab fa-facebook-f"></i></a>
+            <!--Twitter-->
+            <a type="button" class="btn-floating btn-sm btn-tw"><i class="fab fa-twitter"></i></a>
+            <!--Google +-->
+            <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fab fa-google-plus-g"></i></a>
+            <!--Linkedin-->
+            <a type="button" class="btn-floating btn-sm btn-ins"><i class="fab fa-linkedin-in"></i></a>
+
+            <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
+
+          </div>
+
+        </div>
+        <!--/.Content-->
+
       </div>
-      <div class="col-xl-3 text-sm-right text-left order-sm-2 order-3 order-xl-3 col-sm-6 mb-4 mb-xl-0">
-        <a href="#" class="btn btn-primary">Apply now</a>
-      </div>
-</div>
-  
+    </div>
+    <!--Modal: Name-->
+  </div>
+  </div>
+    
+
+
 
   <!-- border -->
   <div class="col-12 mt-4 order-4">
@@ -126,11 +129,24 @@
         consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
         ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
         labore et dolore magnam aliquam quaerat voluptatem.</p>
+
+      
+
+
     </div>
+    
   </div>
 </section>
 <!-- /section -->
+<!-- <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script> --> 
 
-
+<script>
+  $('#modal1').on('hidden.bs.modal', function (e) {
+  // do something...
+  $('#modal1 iframe').attr("src", $("#modal1 iframe").attr("src"));
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 {% endblock %}
