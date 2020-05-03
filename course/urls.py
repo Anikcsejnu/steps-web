@@ -9,5 +9,6 @@ urlpatterns = [
     path('chapter/<str:coursename>/', views.chapter_list, name='chapterlist'),
     path('topic/<str:chaptername>/', views.topic_list, name='topiclist'),
     path('topicsingle/<str:topicname>/', views.topic_single, name = 'topicsingle' ),
+    path('list/', views.list, name='list'),
  
 ]
