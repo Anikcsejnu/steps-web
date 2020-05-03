@@ -66,21 +66,22 @@
         <p class="mb-5">{{ object.bio }}</p>
       </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content">
       <div class="col-12">
-        <h4 class="mb-4">COURSES</h4>
+        <h4 class="mb-4">Tutorials</h4>
       </div>
+      {% for course in object.tutorials.all %}
       <!-- course item -->
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card p-0 border-primary rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/courses/course-4.jpg" alt="course thumb">
+          <img class="card-img-top rounded-0" src="{% static 'home/images/courses/course-4.jpg' %}" alt="course thumb">
           <div class="card-body">
             <ul class="list-inline mb-2">
-              <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
-              <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li>
+              <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>{{ course.uploaded_time.date }}</li>
+              <li class="list-inline-item"><a class="text-color" href="#">{{ course.course_name }}</a></li>
             </ul>
             <a href="course-single.html">
-              <h4 class="card-title">Complete Freelancing</h4>
+              <h4 class="card-title">{{ course.name_of_topic }}</h4>
             </a>
             <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna.</p>
@@ -88,42 +89,7 @@
           </div>
         </div>
       </div>
-      <!-- course item -->
-      <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card p-0 border-primary rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/courses/course-5.jpg" alt="course thumb">
-          <div class="card-body">
-            <ul class="list-inline mb-2">
-              <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
-              <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li>
-            </ul>
-            <a href="course-single.html">
-              <h4 class="card-title">Branding Design</h4>
-            </a>
-            <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna.</p>
-            <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
-          </div>
-        </div>
-      </div>
-      <!-- course item -->
-      <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card p-0 border-primary rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/courses/course-6.jpg" alt="course thumb">
-          <div class="card-body">
-            <ul class="list-inline mb-2">
-              <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
-              <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li>
-            </ul>
-            <a href="course-single.html">
-              <h4 class="card-title">Art Design</h4>
-            </a>
-            <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna.</p>
-            <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>

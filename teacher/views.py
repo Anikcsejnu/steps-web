@@ -19,6 +19,7 @@ def teacher_ssc(request):
 	}
 	return render(request, 'teacher/teacher.html', context)
 
+
 class TeacherDetialsView(DetailView):
 	model = TeachersInfo
 

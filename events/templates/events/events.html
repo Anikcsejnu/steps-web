@@ -1,13 +1,14 @@
 {% extends 'home/base.html' %}
 {% block content %}
 {% load static %}
+
 <!-- page title -->
 <section class="page-title-section overlay" data-background="{% static 'home/images/backgrounds/page-title.jpg' %}">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
         <ul class="list-inline custom-breadcrumb">
-          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Upcoming Events</a></li>
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Events</a></li>
           <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
         </ul>
         <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
@@ -20,25 +21,45 @@
 <!-- courses -->
 <section class="section">
   <div class="container">
-    <div class="row">
+    <div class="row ">
+      <div class="col-12">
+        <!-- teacher category list -->
+        <ul class="list-inline text-center filter-controls mb-5">
+          <li class="list-inline-item m-3 text-uppercase active" data-filter="all">All</li>
+          <li class="list-inline-item m-3 text-uppercase" data-filter="upcoming">Upcoming
+          </li>
+          <li class="list-inline-item m-3 text-uppercase" data-filter="today">On going</li>
+          <li class="list-inline-item m-3 text-uppercase" data-filter="eairlier">Earlier</li> 
+        </ul>
+      </div>
+      <div class="row filtr-container">
       <!-- event -->
       {% for event in events %}
-        <div class="col-lg-4 col-sm-6 mb-5">
+
+        {% if event.date > today %}
+          <div data-category="upcoming" class="col-lg-4 col-sm-6 mb-5 filtr-item">
+        {% elif event.date == today %}
+          <div data-category="today" class="col-lg-4 col-sm-6 mb-5 filtr-item">
+        {% else %}
+          <div data-category="eairlier" class="col-lg-4 col-sm-6 mb-5 filtr-item">
+        {% endif %}    
+        
           <div class="card border-0 rounded-0 hover-shadow">
             <div class="card-img position-relative">
               <img class="card-img-top rounded-0" src="{{ event.banner.url }}" alt="event thumb">
-              <div class="card-date"><span>{{ event.date.day }}</span><br>{{ event.date }}</div>
+              <div class="card-date"><span>{{ event.date.day }}</span><br>{{ event.date|date:'M' }}</div>
             </div>
             <div class="card-body">
               <!-- location -->
               <p><i class="ti-location-pin text-primary mr-2"></i>{{ event.location }}</p>
-              <a href="event-single.html">
+              <a href="{% url 'eventdetails' event.id %}">
                 <h4 class="card-title">{{ event.event_title }}</h4>
               </a>
             </div>
           </div>
         </div>
       {% endfor %}
+    </div>
     </div>
   </div>
 </section>

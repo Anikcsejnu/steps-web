@@ -7,12 +7,13 @@ from PIL import Image
 class Event(models.Model):
 	event_title = models.CharField(max_length=100)
 	location = models.CharField(max_length=100)
+	address = models.CharField(max_length=100, default='')
 	date = models.DateField(max_length=8, default=timezone.now)
 	time = models.TimeField()
 	enrty_fee = models.IntegerField()
 
 	banner = models.ImageField(default='events_banner/default.jpg', upload_to='events_banner')
-
+	details = models.TextField(default='')
 
 	def __str__(self):
 		return self.event_title

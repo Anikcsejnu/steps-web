@@ -26,7 +26,7 @@ class Course(models.Model):
     level = models.CharField(max_length = 100, choices = LEVEL_CHOICES, default = 'HSC')
     
     def __str__(self):
-        return '{}{}{}'.format(self.level, '_', self.name)
+        return '{}'.format(self.name)
     
     
 
@@ -73,14 +73,11 @@ class Tutorial(models.Model):
                                 auto_choose=True,
                                 default='',
                                 )
-    name_of_teacher = models.ForeignKey(TeachersInfo, on_delete = models.CASCADE)
+    name_of_teacher = models.ForeignKey(TeachersInfo, related_name='tutorials', on_delete = models.CASCADE)
     uploaded_time = models.DateTimeField(default=timezone.now())
     video_link = models.CharField(max_length=400, default = "")
     file_link = models.CharField(max_length=400, default=" ")
 
-    def __str__(self):
-        return '{}{}{}{}{}{}{}'.format(self.course_name, 'by',
-                                   self.chapter, '_',
-                                   self.name_of_topic, '_',
-                                   self.name_of_teacher)
 
+    def __str__(self):
+        return '{}'.format(self.name_of_topic)
