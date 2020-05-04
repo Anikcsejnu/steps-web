@@ -20,8 +20,6 @@ def course_list_ssc(request):
 
 
 
-
-
 def chapter_list(request, coursename):
     print(coursename)
     context = {
@@ -43,13 +41,15 @@ def topic_list(request, chaptername):
 
 def topic_single(request, topicname):
     #print(Course.objects.filter(id=Topic.objects.filter(name_of_topic=topicname).first().course_name_id).first().name)
+    #ch=Chapter.objects.filter(id=Topic.objects.filter(name_of_topic=topicname).first().chapter_id).first()
+    #print(Topic.objects.filter(chapter__name_of_chapter=ch))
     context = {
 
         'topics': Tutorial.objects.filter(name_of_topic__name_of_topic=topicname),
         'topicname' : topicname,
         'chaptername' : Chapter.objects.filter(id=Topic.objects.filter(name_of_topic=topicname).first().chapter_id).first(),
         'coursename' : Course.objects.filter(id=Topic.objects.filter(name_of_topic=topicname).first().course_name_id).first(),
-
+        'topiclist' :Topic.objects.filter(chapter__name_of_chapter=Chapter.objects.filter(id=Topic.objects.filter(name_of_topic=topicname).first().chapter_id).first()), 
     }
     #print(context['topics'])
     return render(request, 'course/course-single.html', context)
