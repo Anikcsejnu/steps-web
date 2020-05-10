@@ -110,113 +110,24 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- course list -->
-        <div class="row justify-content-center">
-            <!-- course item -->
-            <div class="col-lg-4 col-sm-6 mb-5">
+        {% for course in random_course_items %}
+            <div data-category="{{ course.dept }}" class="col-lg-4 col-sm-6 mb-5 filtr-item">
                 <div class="card p-0 border-primary rounded-0 hover-shadow">
-                    <img class="card-img-top rounded-0" src="static/home/images/courses/course-1.jpg" alt="course thumb">
-                    <div class="card-body">
-                        <ul class="list-inline mb-2">
-                            <!-- <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li> -->
-                            <li class="list-inline-item"><a class="text-color">HSC, Science</a></li>
-                        </ul>
-                        <!-- <a href="course-single.html"> -->
-                        <h4 class="card-title">Chemistry</h4>
-                        <!-- </a> -->
-                        <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- course item -->
-            <div class="col-lg-4 col-sm-6 mb-5">
-                <div class="card p-0 border-primary rounded-0 hover-shadow">
-                    <img class="card-img-top rounded-0" src="static/home/images/courses/course-2.jpg" alt="course thumb">
-                    <div class="card-body">
-                        <ul class="list-inline mb-2">
-                            <!-- <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li> -->
-                            <li class="list-inline-item"><a class="text-color">HSC, B.Studies</a></li>
-                        </ul>
-                        <a href="course-single.html">
-                            <h4 class="card-title">Programming</h4>
-                        </a>
-                        <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- course item -->
-            <div class="col-lg-4 col-sm-6 mb-5">
-                <div class="card p-0 border-primary rounded-0 hover-shadow">
-                    <img class="card-img-top rounded-0" src="static/home/images/courses/course-3.jpg" alt="course thumb">
+                    <img class="card-img-top rounded-0" src="{% static 'home/images/courses/course-1.jpg' %}" alt="course thumb">
                     <div class="card-body">
                         <ul class="list-inline mb-2">
                             <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
-                            <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li>
+                            <li class="list-inline-item"><a class="text-color" href="">{{ course.dept }}</a></li>
                         </ul>
-                        <a href="course-single.html">
-                            <h4 class="card-title">Lifestyle Archives</h4>
+                        <a href="{% url 'chapterlist' course.name %}">
+                            <h4 class="card-title">{{ course.name }}</h4>
                         </a>
-                        <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+                        <p class="card-text mb-4"> {{ course.short_details }}</p>
                         <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
                     </div>
                 </div>
             </div>
-            <!-- course item -->
-            <div class="col-lg-4 col-sm-6 mb-5">
-                <div class="card p-0 border-primary rounded-0 hover-shadow">
-                    <img class="card-img-top rounded-0" src="static/home/images/courses/course-4.jpg" alt="course thumb">
-                    <div class="card-body">
-                        <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
-                            <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li>
-                        </ul>
-                        <a href="course-single.html">
-                            <h4 class="card-title">Complete Freelancing</h4>
-                        </a>
-                        <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- course item -->
-            <div class="col-lg-4 col-sm-6 mb-5">
-                <div class="card p-0 border-primary rounded-0 hover-shadow">
-                    <img class="card-img-top rounded-0" src="static/home/images/courses/course-5.jpg" alt="course thumb">
-                    <div class="card-body">
-                        <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
-                            <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li>
-                        </ul>
-                        <a href="course-single.html">
-                            <h4 class="card-title">Branding Design</h4>
-                        </a>
-                        <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
-                    </div>
-                </div>
-            </div>
-            <!-- course item -->
-            <div class="col-lg-4 col-sm-6 mb-5">
-                <div class="card p-0 border-primary rounded-0 hover-shadow">
-                    <img class="card-img-top rounded-0" src="static/home/images/courses/course-6.jpg" alt="course thumb">
-                    <div class="card-body">
-                        <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
-                            <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li>
-                        </ul>
-                        <a href="course-single.html">
-                            <h4 class="card-title">Art Design</h4>
-                        </a>
-                        <p class="card-text mb-4"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /course list -->
+            {% endfor %}
         <!-- mobile see all button -->
         <div class="row">
             <div class="col-12 text-center">
@@ -334,76 +245,67 @@
 <!-- teachers -->
 <section class="section">
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row">
             <div class="col-12">
-                <h2 class="section-title">Our Teachers</h2>
+                <div class="d-flex align-items-center section-title justify-content-between">
+                    <h2 class="mb-0 text-nowrap mr-3">Our Mentors</h2>
+                    <div class="border-top w-100 border-primary d-none d-sm-block"></div>
+                    <div>
+                        <a href="{% url 'teacher_hsc' %}" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block">see all</a>
+                    </div>
+                </div>
             </div>
 
-            <!-- teacher -->
-            <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-                <div class="card border-0 rounded-0 hover-shadow">
-                    <img class="card-img-top rounded-0" src="static/home/images/teachers/teacher-1.jpg" alt="teacher">
-                    <div class="card-body">
-                        <a href="teacher-single.html">
-                            <h4 class="card-title">Jacke Masito</h4>
-                        </a>
-                        <p>Teacher</p>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-                            <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-                            <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-                            <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
-                        </ul>
-                    </div>
+          <!-- teacher -->
+
+          {% for teacher_detail in random_teacher_object %}
+              <div data-category="{{ teacher_detail.deparment }}" class="col-lg-3 col-sm-6 mb-5 filtr-item">
+                <div class="card border-1 rounded-1 hover-shadow">
+                  <img class="card-img-top rounded-0" src="{{ teacher_detail.image.url }}" alt="teacher">
+                  <div class="card-body">
+                    <a href="{% url 'teacher' teacher_detail.id %}">
+                      <h4 class="card-title">{{ teacher_detail.name }}</h4>
+                    </a>
+
+                    <p><h6>
+                    {% for subject in teacher_detail.mentoring_subject %}
+                        {% if forloop.last %}
+                          {{ subject }}
+                        {% else %}
+                          {{ subject }},
+                        {% endif %}
+                    {% endfor %} 
+                    </h6>
+                    {{ teacher_detail.subject }}, {{  teacher_detail.institute }}</p>
+                    <ul class="list-inline">
+                      <li class="list-inline-item"><a class="text-color" 
+                        href="{{ teacher_detail.fb_link }}" target="_blank">
+                        <i class="ti-facebook"></i></a></li>
+                      <li class="list-inline-item"><a class="text-color" 
+                        href="{{ teacher_detail.linkedin_link }}" target="_blank">
+                        <i class="ti-linkedin"></i></a></li>
+                      <li class="list-inline-item"><abbr title="{{ teacher_detail.email }}">
+                        <i class="ti-email"></i></abbr></li>
+                      <li class="list-inline-item">
+                        <abbr title="{{ teacher_detail.contact_no }}">
+                        <i class="ti-mobile"></i></abbr></li>
+                    </ul>
+                  </div>
                 </div>
-            </div>
-            <!-- teacher -->
-            <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-                <div class="card border-0 rounded-0 hover-shadow">
-                    <img class="card-img-top rounded-0" src="static/home/images/teachers/teacher-2.jpg" alt="teacher">
-                    <div class="card-body">
-                        <a href="teacher-single.html">
-                            <h4 class="card-title">Clark Malik</h4>
-                        </a>
-                        <p>Teacher</p>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-                            <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-                            <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-                            <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- teacher -->
-            <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-                <div class="card border-0 rounded-0 hover-shadow">
-                    <img class="card-img-top rounded-0" src="static/home/images/teachers/teacher-3.jpg" alt="teacher">
-                    <div class="card-body">
-                        <a href="teacher-single.html">
-                            <h4 class="card-title">John Doe</h4>
-                        </a>
-                        <p>Teacher</p>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-                            <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-                            <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
-                            <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+              </div>
+          {% endfor %}
+          <!-- teacher -->       
         </div>
     </div>
 </section>
-<!-- /teachers -->
+           
 
 <!-- blog -->
 <section class="section pt-0">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2 class="section-title">Latest News</h2>
+                <h2 class="section-title">Latest Events</h2>
             </div>
         </div>
         <div class="row justify-content-center">
