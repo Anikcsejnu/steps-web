@@ -55,6 +55,7 @@ class Topic(models.Model):
     def __str__(self):
         return self.name_of_topic
 
+
 class Tutorial(models.Model):
 
     course_name = models.ForeignKey(Course, on_delete = models.CASCADE)
@@ -74,6 +75,8 @@ class Tutorial(models.Model):
                                 )
     name_of_teacher = models.ForeignKey(TeachersInfo, related_name='tutorials', on_delete = models.CASCADE)
     uploaded_time = models.DateTimeField(default=timezone.now())
+    video_link = models.CharField(max_length=400, default = "")
+    file_link = models.CharField(max_length=400, default=" ")
 
 
     def __str__(self):
