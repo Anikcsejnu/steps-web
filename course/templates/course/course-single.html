@@ -1,132 +1,196 @@
-{% extends 'home/base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'home/base.html' %} {% load static %} {% block content %}
 
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<style>
+    .style13 {
+        height: 10px;
+        border: 0;
+        box-shadow: 0 10px 10px -10px #8c8b8b inset;
+    }
+    
+    .btn1 {
+        border-radius: 10px;
+    }
+    
+    .btn1:hover {
+        transform: scale(1.3);
+    }
+    
+    .btn2:hover {
+        transform: scale(1.2);
+    }
+    
+    .dl:hover {
+        transform: scale(1.2);
+        font-weight: bold;
+    }
+    
+    .lit:hover {
+        font-style: italic;
+    }
+    
+    .list-type1 {
+        width: 400px;
+        margin: 0 auto;
+    }
+    
+    .list-type1 ol {
+        counter-reset: li;
+        list-style: none;
+        *list-style: decimal;
+        font-size: 15px;
+        font-family: 'Raleway', sans-serif;
+        padding: 0;
+        margin-bottom: 4em;
+    }
+    
+    .list-type1 ol ol {
+        margin: 0 0 0 2em;
+    }
+    
+    .list-type1 a {
+        position: relative;
+        display: block;
+        padding: .4em .4em .4em 2em;
+        *padding: .4em;
+        margin: .5em 0;
+        background: #93C775;
+        color: #000;
+        text-decoration: none;
+        -moz-border-radius: .3em;
+        -webkit-border-radius: .3em;
+        border-radius: 10em;
+        transition: all .2s ease-in-out;
+    }
+    
+    .list-type1 a:hover {
+        background: #d6d4d4;
+        text-decoration: none;
+        transform: scale(1.1);
+    }
+    
+    .list-type1 a:before {
+        content: counter(li);
+        counter-increment: li;
+        position: absolute;
+        left: -1.3em;
+        top: 50%;
+        margin-top: -1.3em;
+        background: #93C775;
+        height: 2em;
+        width: 2em;
+        line-height: 2em;
+        border: .3em solid #fff;
+        text-align: center;
+        font-weight: bold;
+        -moz-border-radius: 2em;
+        -webkit-border-radius: 2em;
+        border-radius: 2em;
+        color: #FFF;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
 
 <!-- page title -->
 <section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <ul class="list-inline custom-breadcrumb">
-          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="courses.html">Our Courses</a>
-          </li>
-          <li class="list-inline-item text-white h3 font-secondary nasted">{{ topicname }}</li>
-        </ul>
-        <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some
-          universities and the emphasis placed on final exams by others.</p>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="courses.html">Our Courses</a>
+                    </li>
+                    <li class="list-inline-item text-white h3 font-secondary nasted"><a href="{% url 'chapterlist' coursename %}" class="text-white lit">{{ coursename }}</a></li>
+                    <li class="list-inline-item text-white h3 font-secondary nasted"><a href="{% url 'topiclist' chaptername %}" class="text-white lit">{{ chaptername }}</a></li>
+                </ul>
+                <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 <!-- /page title -->
 
 <!-- section -->
 <section class="section-sm">
-
-{% for topic in topics %}
-  <!-- course info -->
-  <div class="row align-items-center mb-10 border-bottom border-primary >
-      <div class=" row align-items-center ">
-        <div class=" col-xl-3 order-1 col-sm-6 mb-4 mb-xl-0">
-    <h2>{{ topic.name_of_topic }}</h2>
-  </div>
-  <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2">
-    <ul class="list-inline text-xl-center">
-      <li class="list-inline-item mr-4 mb-3 mb-sm-0">
-        <div class="d-flex align-items-center">
-          <i class="ti-book text-primary icon-md mr-2"></i>
-          <div class="text-left">
-            <h6 class="mb-0">Taken By</h6>
-            <p class="mb-0">{{ topic.name_of_teacher }}</p>
-          </div>
-        </div>
-      </li>
-      <li class="list-inline-item mr-4 mb-3 mb-sm-0">
-        <div class="d-flex align-items-center">
-          <i class="ti-alarm-clock text-primary icon-md mr-2"></i>
-          <div class="text-left">
-            <h6 class="mb-0">Uploaded</h6>
-            <p class="mb-0">{{ topic.uploaded_time.date }}</p>
-          </div>
-        </div>
-      </li>
-      <li class="list-inline-item mr-4 mb-3 mb-sm-0">
-        <div class="d-flex align-items-center">
-          <i class="ti-wallet text-primary icon-md mr-2"></i>
-          <div class="text-left">
-            <h6 class="mb-0">Views</h6>
-            <p class="mb-0">From: $699</p>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="col-xl-3 text-sm-right text-left order-sm-2 order-3 order-xl-3 col-sm-6 mb-4 mb-xl-0">
-    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal1">Apply now</a>
-    <!--Modal: Name-->
-    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-
-        <!--Content-->
-        <div class="modal-content">
-
-          <!--Body-->
-          <div class="modal-body mb-0 p-0">
-
-            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/A3PDXmYoF5U"
-                allowfullscreen></iframe>
-            </div>
-
-          </div>
-
-          <!--Footer-->
-          <div class="modal-footer justify-content-center">
-            <span class="mr-4">Spread the word!</span>
-            <a type="button" class="btn-floating btn-sm btn-fb"><i class="fab fa-facebook-f"></i></a>
-            <!--Twitter-->
-            <a type="button" class="btn-floating btn-sm btn-tw"><i class="fab fa-twitter"></i></a>
-            <!--Google +-->
-            <a type="button" class="btn-floating btn-sm btn-gplus"><i class="fab fa-google-plus-g"></i></a>
-            <!--Linkedin-->
-            <a type="button" class="btn-floating btn-sm btn-ins"><i class="fab fa-linkedin-in"></i></a>
-
-            <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
-
-          </div>
-
-        </div>
-        <!--/.Content-->
-
-      </div>
+    <div class="mb-20 mt-0">
+        <center>
+            <h1>{{ topicname }}</h1>
+        </center>
     </div>
-    <!--Modal: Name-->
-  </div>
-  </div>
-    
+    <hr class="style13">
 
-
-
-  <!-- border -->
-  <div class="col-12 mt-4 order-4">
-    <div class="border-bottom border-primary"></div>
-  </div>
-{% endfor %}
+    <!-- course info -->
+    <div class="row align-items-center mb-5 border-bottom border-primary">
+        <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2 border-right">
+            <div class="">
+                <h3>
+                    <center>Tutorials</center>
+                </h3>
+                <hr>
+                <ul>
+                    {% for topic in topics %}
+                    <li>
+                        <ul class="list-inline text-xl-center">
+                            <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+                                <div class="d-flex align-items-center">
+                                    <i class="ti-book text-primary icon-md mr-2"></i>
+                                    <div class="text-left">
+                                        <h6 class="mb-0">Taken By</h6>
+                                        <p class="mb-0">{{ topic.name_of_teacher }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+                                <div class="d-flex align-items-center">
+                                    <i class="ti-alarm-clock text-primary icon-md mr-2"></i>
+                                    <div class="text-left">
+                                        <h6 class="mb-0">Uploaded</h6>
+                                        <p class="mb-0">{{ topic.uploaded_time.date }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+                                <div class="d-flex align-items-center">
+                                    <i class="ti-file text-primary icon-md mr-2"></i>
+                                    <div class="text-left">
+                                        <h6 class="mb-0">Note</h6>
+                                        <a href="{{ topic.file_link }}" target="_blank">
+                                            <p class="dl mb-0"><i>Download</i> </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+                                <div class="d-flex align-items-center">
+                                    <div class="text-left">
+                                        <a class="btn btn1 btn-dark mb-4 venobox" href="{{ topic.video_link }}" data-vbtype="video">
+                                            <i class="ti-control-play"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2 align-right">
+            <h3>
+                <center>More Topics</center>
+            </h3>
+            <hr>
+            <div class="list-type1">
+                <ol>
+                    {% for topic in topiclist %} {% if topic.name_of_topic|stringformat:"s" != topicname|stringformat:"s" %}
+                    <li><a href="{% url 'topicsingle' topic.name_of_topic %}">{{ topic.name_of_topic }}</a></li>
+                    {% endif %} {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- /section -->
-<!-- <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script> --> 
+<!-- <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script> -->
 
-<script>
-  $('#modal1').on('hidden.bs.modal', function (e) {
-  // do something...
-  $('#modal1 iframe').attr("src", $("#modal1 iframe").attr("src"));
-  });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 {% endblock %}

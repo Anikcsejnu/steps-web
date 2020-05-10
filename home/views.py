@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from course.models import Course
+from teacher.models import TeachersInfo
 
 
 # Create your views here.
@@ -8,7 +10,11 @@ def index(request):
 
 
 def about(request):
-	return render(request, 'home/about.html')
+	context = {
+		'number_of_teacher':TeachersInfo.objects.all().count(),
+		'number_of_course':Course.objects.all().count(),
+	}
+	return render(request, 'home/about.html', context)
 
 
 def courses(request):
