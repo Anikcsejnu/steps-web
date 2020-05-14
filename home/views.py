@@ -7,18 +7,18 @@ import random
 # Create your views here.
 
 def index(request):
-	teachers_items = TeachersInfo.objects.all()
-	teachers_items = random.sample(list(teachers_items), 3)
-	course_items = Course.objects.all()
-	course_items = random.sample(list(course_items), 3)
+	# teachers_items = TeachersInfo.objects.all()
+	# teachers_items = random.sample(list(teachers_items), 3)
+	# course_items = Course.objects.all()
+	# course_items = random.sample(list(course_items), 3)
 
-	context = {
+	# context = {
 
-		'random_teacher_object':teachers_items,
-		'random_course_items':course_items
-	}
+	# 	'random_teacher_object':teachers_items, 	
+	# 	'random_course_items':course_items
+	# }
 	
-	return render(request, 'home/index.html', context)
+	return render(request, 'home/index.html')
 
 
 def about(request):
