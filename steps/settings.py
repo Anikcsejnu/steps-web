@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'teacher.apps.TeacherConfig',
     'course.apps.CourseConfig',
     'events.apps.EventsConfig',
+    'gallery.apps.GalleryConfig',
     'six',
     'smart_selects',
 ]
