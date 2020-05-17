@@ -1,0 +1,51 @@
+{% extends 'home/base.html' %} {% load static %} {% block content %}
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="{% static 'home/images/backgrounds/page-title.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Gallery</a></li>
+                    <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+                </ul>
+                <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /page title -->
+<section class="section pt-3 pb-3 shadow mb-2">
+    <div class="">
+        <center>
+            <h1>{{ gallery.gallery_name }}</h1>
+            <p class="h4">{{ gallery.gallery_short_details }}</p>
+        </center>
+    </div>
+</section>
+
+
+<section>
+    <div class="">
+        <div class="row justify-content-center no-gutters">
+            {% for img in galleryImages %}
+            <div class="col-sm-3 mb-2 mr-2 shadow">
+                <a href="{{  img.image.url  }}" data-toggle="lightbox" data-gallery="example-gallery" class="">
+                    <img src="{{  img.image.url  }}" class="img-fluid img-thumbnail" style="width: 400px; height: 350px;">
+                </a>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+</script>
+
+{% endblock content %}

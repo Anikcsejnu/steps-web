@@ -1,8 +1,14 @@
 {% extends 'home/base.html' %} {% block nav_item_about %}active{% endblock nav_item_about %} {% block content %} {% load static %}
 
+
 <style>
+    .card:hover {
+        transform: scale(1.1);
+    }
+    
     .im {
-        height: 320px!important;
+        height: 200px;
+        width: 200px;
     }
 </style>
 <!-- page title -->
@@ -102,42 +108,133 @@
                 <h2 class="section-title">Contact Us</h2>
             </div>
             <!-- teacher -->
-            <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-                <div class="card border-0 rounded-0 hover-shadow">
-                    <img class="card-img-top rounded-circle im" src="{% static 'home/images/about/pv.jpg' %}" alt="teacher">
+            <div class="col-lg-6 col-sm-6 mb-5 mb-lg-0">
+                <div class="card border-0 rounded-0 shadow">
+                    <div class="row">
+                        <div class="col-sm-5 ">
+                            <div class="container">
+                                <img class="card-img-top rounded-10 mt-2 im" src="{% static 'home/images/about/pv.jpg' %}" alt="teacher">
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-7">
+
+                            <!--Grid column-->
+
+
+                            <div class="list-group-flush">
+                                <div class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <h5><i class="fa fa-phone-square h3" aria-hidden="true"></i></h5>
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <h4>01922444626</h4>
+                                            <h4>01232131312</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <h5 class="mb-0"> <i class="fa fa-facebook-square h3 mr-1" aria-hidden="true"></i>Faruque Parvej</h5>
+                                </div>
+                                <div class="list-group-item">
+                                    <h5 class="mb-0"><i class="fa fa-linkedin-square h3 mr-1" aria-hidden="true"></i>Faruque Parvej</h5>
+                                </div>
+                            </div>
+
+
+                            <!--Grid column-->
+
+                        </div>
+                    </div>
+
                     <div class="card-body">
-                        <a href="{% url 'teacher' 1 %}">
-                            <h4 class="card-title">Faruque Parvej</h4>
-                        </a>
-                        <div class="d-flex justify-content-between">
-                            <span>CEO(Science)</span>
-                            <ul class="list-inline">
-                                <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-                                <li class="list-inline-item"><abbr title="01922444626"><i class="ti-mobile"></i></abbr></li>
-                                <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-email"></i></a></li>
-                                <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
-                            </ul>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="{% url 'teacher' 1 %}">
+                                    <h4 class="card-title">Faruque Parvej</h4>
+                                </a>
+                                <div class="d-flex justify-content-between">
+                                    <span>CEO(Science)</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-right mt-3">
+                                    <span>MME</span>
+                                </div>
+                                <div class="text-right">
+                                    <span>BUET</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- teacher -->
-            <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-                <div class="card border-0 rounded-0 hover-shadow">
-                    <img class="card-img-top rounded-circle im" src="{% static 'home/images/about/ronybhai.jpg' %}" alt="teacher">
-                    <div class="card-body">
-                        <a href="{% url 'teacher' 2 %}">
-                            <h4 class="card-title">Raqib Hossain Rony</h4>
-                        </a>
-                        <div class="d-flex justify-content-between">
-                            <span>CEO(Business Studies)</span>
-                            <ul class="list-inline">
-                                <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
-                                <li class="list-inline-item"><abbr title="01678231110"><i class="ti-mobile"></i></abbr></li>
-                                <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-email"></i></a></li>
-                                <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
-                            </ul>
+            <div class="col-lg-6 col-sm-6 mb-5 mb-lg-0">
+                <div class="card border-0 rounded-0 shadow">
+                    <div class="row">
+                        <div class="col-sm-5 ">
+                            <div class="container ">
+                                <img class="card-img-top rounded-10 mt-2 im" src="{% static 'home/images/about/ronybhai.jpg' %}" alt="teacher">
+                            </div>
+
                         </div>
+
+                        <div class="col-sm-7">
+
+                            <!--Grid column-->
+                            <div class="list-group-flush">
+                                <div class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <h5><i class="fa fa-phone-square h3" aria-hidden="true"></i></h5>
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <h4>01678231110</h4>
+                                            <h4>01232132131</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <h5 class="mb-0"> <i class="fa fa-facebook-square h3 mr-1" aria-hidden="true"></i>Raqib Hossain Rony</h5>
+                                </div>
+                                <div class="list-group-item">
+                                    <h5 class="mb-0"><i class="fa fa-linkedin-square h3 mr-1" aria-hidden="true"></i>Raqib Hossain Rony</h5>
+
+                                </div>
+                            </div>
+
+
+                            <!--Grid column-->
+
+                        </div>
+                    </div>
+
+                    <div class="card-body ">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="{% url 'teacher' 2 %}">
+                                    <h4 class="card-title">Raqib Hossain Rony</h4>
+                                </a>
+                                <div class="d-flex justify-content-between">
+                                    <span>CEO(Business Studies)</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-right mt-3">
+                                    <span>Finance</span>
+                                </div>
+                                <div class="text-right">
+                                    <span>University Of Dhaka</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
                     </div>
                 </div>
             </div>
