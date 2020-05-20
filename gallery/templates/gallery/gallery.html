@@ -1,0 +1,62 @@
+{% extends 'home/base.html' %} {% load static %} {% block content %}
+<style>
+    .card:hover {
+        transform: scale(1.1);
+    }
+    
+    .im {
+        height: 200px;
+        width: 300px;
+    }
+</style>
+<!-- page title -->
+<section class="page-title-section overlay" data-background="{% static 'home/images/backgrounds/page-title.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Gallery</a></li>
+                    <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+                </ul>
+                <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /page title -->
+<section>
+    <div class="container mb-4 h-100">
+        <div class="row">
+            <div class="col-12">
+                <!-- teacher category list -->
+                <ul class="list-inline text-center filter-controls mb-5">
+                    <li class="list-inline-item m-3 text-uppercase active" data-filter="all">All</li>
+                    <li class="list-inline-item m-3 text-uppercase" data-filter="Tour">Tour</li>
+                    <li class="list-inline-item m-3 text-uppercase" data-filter="Iftar">Iftar</li>
+                    <li class="list-inline-item m-3 text-uppercase" data-filter="Farewell">Farewell</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row filtr-container">
+            {% for gallery in galleries %}
+            <div class="col-sm-12 col-lg-4 mb-2 filtr-item" data-category="{{ gallery.gallery_type }}">
+                <a href="{% url 'gallerysingle' gallery.gallery_name %}">
+                    <!-- Card Wider -->
+                    <div class="card h-100 shadow">
+                        <div class="">
+                            <img class="card-img-top" src="{{ gallery.gallery_thumbnail.url }}" alt="Card image cap" style="width: 338px; height: 250px;">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-text">{{ gallery.gallery_name }}</h3>
+                        </div>
+                    </div>
+                    <!-- Card Wider -->
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</section>
+
+{% endblock content %}

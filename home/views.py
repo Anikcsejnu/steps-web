@@ -31,3 +31,7 @@ def about(request):
 
 def courses(request):
 	return render(request, 'home/courses.html')
+
+
+def blog(request):
+	return render(request, 'home/blog.html')
