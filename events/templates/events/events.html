@@ -62,7 +62,40 @@
     </div>
     </div>
   </div>
+
+<nav aria-label="Page navigation example">
+{% if events.has_other_pages %}
+  <ul class="pagination justify-content-center">
+    {% if events.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ events.previous_page_number }}">&laquo;</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled"><a class="page-link"><span>&laquo;</span></a></li>
+    {% endif %}
+    {% for i in events.paginator.page_range %}
+      {% if events.number == i %}
+        <li class="page-item active">
+          <a class="page-link"><span>{{ i }} <span class="sr-only">(current)</span></span></a>
+        </li>
+      {% else %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+    {% if events.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ events.next_page_number }}">&raquo;</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled"><a class="page-link"><span>&raquo;</span></a></li>
+    {% endif %}
+  </ul>
+{% endif %}
+</nav>
 </section>
 <!-- /courses -->
+
 
 {% endblock content %}
