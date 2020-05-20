@@ -2,4 +2,6 @@
 *.pyc
 db.sqlite3
 *.DS_Store
->>>>>>> master
+*.jpg
+migrations/
+
