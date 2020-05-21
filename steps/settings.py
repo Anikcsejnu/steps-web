@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'course.apps.CourseConfig',
     'events.apps.EventsConfig',
     'gallery.apps.GalleryConfig',
+    'blog.apps.BlogConfig',
     'six',
     'smart_selects',
 ]
