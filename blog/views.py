@@ -1,16 +1,22 @@
 from django.shortcuts import render
 from .models import Blog
 from .form import BlogForm
+from django.views.generic import DetailView
 
 
 
 # Create your views here.
 def blog(request):
-	return render(request, 'blog/blog.html')
+	context = {
+		'postlist':Blog.objects.filter(status=True).order_by('-time'),
+	}
+	return render(request, 'blog/blog.html', context)
 
 
-def blogsingle(request):
-	return render(request, 'blog/blog-single.html')
+class BlogSingleDetailView(DetailView):
+	model = Blog
+	template_name = 'blog/blog-single.html'
+
 
 def post_blog(request):
 	MyBlogForm = BlogForm(request.POST, request.FILES)
@@ -28,16 +34,5 @@ def post_blog(request):
 	else:
 		return render(request, 'blog/post_blog.html')
 
-	# if request.method == 'POST':
-	# 	blog=Blog()
-	# 	blog.name = request.POST.get('name')
-	# 	blog.institute = request.POST.get('institute')
-	# 	blog.title= request.POST.get('title')
-	# 	blog.content= request.POST.get('content')
-	# 	if request.POST.get('image'):
-	# 		blog.image = request.FILES('image')
-	# 	blog.status = False
-	# 	blog.save()
-	# 	return render(request, 'blog/blog.html')  
 
 	
