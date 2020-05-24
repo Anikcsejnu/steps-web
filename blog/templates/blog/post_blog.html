@@ -1,91 +1,97 @@
 {% extends 'home/base.html' %} {% block content %} {% load static %}
+<style>
+    .con {
+        backdrop-filter: blur(0px);
+    }
+</style>
 
-<section class="page-title-section overlay" data-background="{% static 'home/images/backgrounds/page-title.jpg' %}">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <ul class="list-inline custom-breadcrumb">
-                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Post Blog</a></li>
-                    <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
-                </ul>
-                <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+
+<section class="section overlay bg-cover" data-background="{% static 'home/images/blog/writing.jpg' %}">
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <ul class="list-inline custom-breadcrumb">
+                        <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Post Blog</a></li>
+                        <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+                    </ul>
+                    <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+                </div>
             </div>
+        </div>
+    </section>
+    <div class="container">
+        <!-- post card -->
+        <div class="row">
+            <form class="needs-validation pl-2 pr-2 pt-2 pd-2 rounded-10 con" action="{% url 'post_blog' %}" method="POST" enctype="multipart/form-data" novalidate>
+                <h2 align="center" class="text-white">Write your post here</h2>
+                <hr> {%csrf_token%}
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom01" class="text-white">Name</label>
+                        <input type="text" name='name' class="form-control" id="validationCustom01" placeholder="Name" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom02" class="text-white">Institution</label>
+                        <input type="text" name='institute' class="form-control" id="validationCustom02" placeholder="Institution" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationCustom03" class="text-white">Post title</label>
+                        <input type="text" name='title' class="form-control" id="validationCustom03" placeholder="Post title" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid title.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="exampleFormControlTextarea1" class="text-white">Content</label>
+                        <textarea class="form-control" name='content' id="exampleFormControlTextarea1" rows="3" required></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-10 mb-3">
+                        <label for="exampleFormControlFile1" class="text-white">Content Image</label>
+                        <input type="file" name='image' class="form-control-file" id="exampleFormControlFile1" required>
+                        <div class="invalid-feedback">
+                            Please provide a Content Image.
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit post</button>
+            </form>
+
+
         </div>
     </div>
 </section>
 
-<section class="section">
-<div class="container">
-    <!-- post card -->
-<div class="row">
-<form class="needs-validation" action="{% url 'post_blog' %}"method="POST" enctype="multipart/form-data" novalidate>
-	<h2 align="center">Write your post here</h2>
-	<hr>
-	{%csrf_token%}
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="validationCustom01">Name</label>
-      <input type="text" name='name' class="form-control" id="validationCustom01" placeholder="Name" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-    </div>
-    <div class="col-md-6 mb-3">
-      <label for="validationCustom02">Institution</label>
-      <input type="text" name='institute' class="form-control" id="validationCustom02" placeholder="Institution"  required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="col-md-12 mb-3">
-      <label for="validationCustom03">Post title</label>
-      <input type="text" name='title' class="form-control" id="validationCustom03" placeholder="Post title" required>
-      <div class="invalid-feedback">
-        Please provide a valid title.
-      </div>
-    </div>
-  </div>
-  <div class="form-row">
-  	<div class="col-md-12 mb-3">
-	    <label for="exampleFormControlTextarea1">Content</label>
-	    <textarea class="form-control" name='content' id="exampleFormControlTextarea1" rows="3" required></textarea>
-	</div>
-  </div>
-  <div class="form-row">
-  <div class="col-md-10 mb-3">
-    <label for="exampleFormControlFile1">Content Image</label>
-    <input type="file" name='image' class="form-control-file" id="exampleFormControlFile1" required>
-    <div class="invalid-feedback">
-        Please provide a Content Image.
-    </div>
-  </div>
-</div>
-  <button class="btn btn-primary" type="submit">Submit post</button>
-</form>
-
 <script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
 </script>
-		</div>
-	</div>
-</section>
 {% endblock content %}

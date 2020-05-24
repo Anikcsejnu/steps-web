@@ -40,7 +40,7 @@
             <!-- course item -->
             {% for course in course_list %}
             <div data-category="{{ course.dept }}" class="col-lg-4 col-sm-6 mb-5 filtr-item">
-                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                <div class="card p-0 border-primary rounded-0 shadow">
                     <img class="card-img-top rounded-0" src="{% static 'home/images/courses/course-1.jpg' %}" alt="course thumb">
                     <div class="card-body">
                         <ul class="list-inline mb-2">
@@ -51,7 +51,6 @@
                             <h4 class="card-title">{{ course.name }}</h4>
                         </a>
                         <p class="card-text mb-4"> {{ course.short_details }}</p>
-                        <a href="course-single.html" class="btn btn-primary btn-sm">Apply now</a>
                     </div>
                 </div>
             </div>
