@@ -72,52 +72,6 @@
     <header class="header">
 
         <!-- navbar -->
-<<<<<<< HEAD
-        <div class="navigation w-100">
-            <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light p-0">
-                    <a class="navbar-brand" href="index.html"><img src="{% static 'home/images/logo.png' %}" alt="logo"></a>
-                    <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-                    <div class="collapse navbar-collapse" id="navigation">
-                        <ul class="navbar-nav ml-auto text-center">
-                            <li class="nav-item {% block nav_item_home %}{% endblock nav_item_home %}">
-                                <a class="nav-link" href="{% url 'home' %}">Home</a>
-                            </li>
-                            <li class="nav-item {% block nav_item_about %}{% endblock nav_item_about %}">
-                                <a class="nav-link" href="{% url 'about' %}">About</a>
-                            </li>
-                            <li class="nav-item dropdown view">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">COURSES
-              </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{% url 'courseListHsc' %}">HSC</a>
-                                    <a class="dropdown-item" href="{% url 'courseListSsc' %}">SSC</a>
-                                </div>
-                            </li>
-                            <li class="nav-item {% block nav_item_events %}{% endblock nav_item_events %}">
-                                <a class="nav-link" href="{% url 'events' %}">EVENTS</a>
-                            </li>
-                            <li class="nav-item {% block nav_item_blog %}{% endblock nav_item_blog %}">
-                                <a class="nav-link" href="{% url 'blog' %}">BLOG</a>
-                            </li>
-                            <li class="nav-item dropdown view">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MENTORS
-              </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{% url 'teacher_hsc' %}">HSC</a>
-                                    <a class="dropdown-item" href="{% url 'teacher_ssc' %}">SSC</a>
-                                </div>
-                            </li>
-                            <li class="nav-item @@contact">
-                                <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-=======
         <nav class="navbar smart-scroll navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="#">Brand</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -135,7 +89,7 @@
                             <a class="dropdown-item" href="{% url 'courseListSsc' %}">SSC</a>
                         </div>
                     </li>
-                    <li class="nav-item @@events">
+                    <li class="nav-item {% block nav_item_event %}{% endblock nav_item_event %}">
                         <a class="nav-link" href="{% url 'events' %}">EVENTS</a>
                     </li>
                     <li class="nav-item @@blog">
@@ -154,7 +108,6 @@
                     </li>
                 </ul>
                 </ul>
->>>>>>> master
             </div>
             <!-- navbar-collapse.// -->
         </nav>
