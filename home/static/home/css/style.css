@@ -512,7 +512,7 @@ a h4:hover {
 }
 
 textarea.form-control {
-  height: 200px;
+  height: 300px;
   padding: 20px;
 }
 
@@ -1097,4 +1097,13 @@ link:focus,
 }
 .carousel-control.right i {
   margin-right: -2px;
+}
+
+
+form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
 }

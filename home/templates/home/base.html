@@ -98,10 +98,10 @@
                                     <a class="dropdown-item" href="{% url 'courseListSsc' %}">SSC</a>
                                 </div>
                             </li>
-                            <li class="nav-item @@events">
+                            <li class="nav-item {% block nav_item_events %}{% endblock nav_item_events %}">
                                 <a class="nav-link" href="{% url 'events' %}">EVENTS</a>
                             </li>
-                            <li class="nav-item @@blog">
+                            <li class="nav-item {% block nav_item_blog %}{% endblock nav_item_blog %}">
                                 <a class="nav-link" href="{% url 'blog' %}">BLOG</a>
                             </li>
                             <li class="nav-item dropdown view">
