@@ -1,24 +1,13 @@
-(function ($) {
+(function($) {
     'use strict';
 
     // Preloader js    
-    $(window).on('load', function () {
+    $(window).on('load', function() {
         $('.preloader').fadeOut(700);
     });
 
-    // Sticky Menu
-    $(window).scroll(function () {
-        if ($('header').offset().top > 10) {
-            $('.top-header').addClass('hide');
-            $('.navigation').addClass('nav-bg');
-        } else {
-            $('.top-header').removeClass('hide');
-            $('.navigation').removeClass('nav-bg');
-        }
-    });
-
     // Background-images
-    $('[data-background]').each(function () {
+    $('[data-background]').each(function() {
         $(this).css({
             'background-image': 'url(' + $(this).data('background') + ')'
         });
@@ -40,20 +29,20 @@
     $('.hero-slider').slickAnimation();
 
     // venobox popup
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('.venobox').venobox();
     });
 
 
     // filter
-    $(document).ready(function () {
+    $(document).ready(function() {
         var containerEl = document.querySelector('.filtr-container');
         var filterizd;
         if (containerEl) {
             filterizd = $('.filtr-container').filterizr({});
         }
         //Active changer
-        $('.filter-controls li').on('click', function () {
+        $('.filter-controls li').on('click', function() {
             $('.filter-controls li').removeClass('active');
             $(this).addClass('active');
         });
@@ -66,7 +55,7 @@
             oTop = $('.count').offset().top - window.innerHeight;
         }
         if ($(window).scrollTop() > oTop) {
-            $('.count').each(function () {
+            $('.count').each(function() {
                 var $this = $(this),
                     countTo = $this.attr('data-count');
                 $({
@@ -76,21 +65,21 @@
                 }, {
                     duration: 1000,
                     easing: 'swing',
-                    step: function () {
+                    step: function() {
                         $this.text(Math.floor(this.countNum));
                     },
-                    complete: function () {
+                    complete: function() {
                         $this.text(this.countNum);
                     }
                 });
             });
         }
     }
-    $(window).on('scroll', function () {
+    $(window).on('scroll', function() {
         counter();
     });
 
-    
+
     // Aos js
     AOS.init({
         once: true
@@ -99,15 +88,15 @@
     // Animation
     $(document).ready(function() {
         $('.has-animation').each(function(index) {
-          $(this).delay($(this).data('delay')).queue(function(){
-            $(this).addClass('animate-in');
-          });
+            $(this).delay($(this).data('delay')).queue(function() {
+                $(this).addClass('animate-in');
+            });
         });
-      });
+    });
 
 
     $('.carousel').carousel({
         interval: 2000
     })
-      
+
 })(jQuery);

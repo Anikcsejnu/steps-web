@@ -45,35 +45,34 @@
         <img src="{% static 'home/images/preloader.gif' %}" alt="preloader">
     </div>
     <!-- preloader end -->
-
+    <style>
+        .smart-scroll {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+        }
+        
+        .scrolled-down {
+            transform: translateY(-100%);
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .scrolled-up {
+            transform: translateY(0);
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .navbar {
+            min-height: 80px;
+        }
+    </style>
     <!-- header -->
-    <header class="fixed-top header">
-        <!-- top header -->
-        <div class="top-header py-2 bg-white">
-            <div class="container">
-                <div class="row no-gutters">
-                    <div class="col-lg-4 text-center text-lg-left">
-                        <a class="text-color mr-3" href="callto:+443003030266"><strong>CALL</strong> +44 300 303 0266</a>
-                        <ul class="list-inline d-inline">
-                            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-facebook"></i></a></li>
-                            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
-                            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-linkedin"></i></a></li>
-                            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="#"><i class="ti-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- <div class="col-lg-8 text-center text-lg-right">
-          <ul class="list-inline">
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="notice.html">notice</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="research.html">research</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="scholarship.html">SCHOLARSHIP</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#loginModal">login</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#" data-toggle="modal" data-target="#signupModal">register</a></li>
-          </ul>
-        </div> -->
-                </div>
-            </div>
-        </div>
+    <header class="header">
+
         <!-- navbar -->
+<<<<<<< HEAD
         <div class="navigation w-100">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light p-0">
@@ -118,8 +117,48 @@
                         </ul>
                     </div>
                 </nav>
+=======
+        <nav class="navbar smart-scroll navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Brand</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+            <div class="collapse navbar-collapse" id="main_nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item {% block nav_item_home %}{% endblock nav_item_home %}"> <a class="nav-link" href="{% url 'home' %}">Home </a> </li>
+                    <li class="nav-item {% block nav_item_about %}{% endblock nav_item_about %}"><a class="nav-link" href="{% url 'about' %}"> About </a></li>
+                    <li class="nav-item dropdown view">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">COURSES
+      </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'courseListHsc' %}">HSC</a>
+                            <a class="dropdown-item" href="{% url 'courseListSsc' %}">SSC</a>
+                        </div>
+                    </li>
+                    <li class="nav-item @@events">
+                        <a class="nav-link" href="{% url 'events' %}">EVENTS</a>
+                    </li>
+                    <li class="nav-item @@blog">
+                        <a class="nav-link" href="{% url 'blog' %}">BLOG</a>
+                    </li>
+                    <li class="nav-item dropdown view">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MENTORS
+      </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'teacher_hsc' %}">HSC</a>
+                            <a class="dropdown-item" href="{% url 'teacher_ssc' %}">SSC</a>
+                        </div>
+                    </li>
+                    <li class="nav-item @@contact">
+                        <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+                    </li>
+                </ul>
+                </ul>
+>>>>>>> master
             </div>
-        </div>
+            <!-- navbar-collapse.// -->
+        </nav>
+
 
     </header>
 
@@ -208,7 +247,23 @@
     </footer>
 
     <!-- jQuery -->
+    <script>
+        $('body').css('padding-top', $('.navbar').outerHeight() + 'px')
 
+        // detect scroll top or down
+        if ($('.smart-scroll').length > 0) { // check if element exists
+            var last_scroll_top = 0;
+            $(window).on('scroll', function() {
+                scroll_top = $(this).scrollTop();
+                if (scroll_top < last_scroll_top) {
+                    $('.smart-scroll').removeClass('scrolled-down').addClass('scrolled-up');
+                } else {
+                    $('.smart-scroll').removeClass('scrolled-up').addClass('scrolled-down');
+                }
+                last_scroll_top = scroll_top;
+            });
+        }
+    </script>
 
     <script src="{% static 'home/plugins/jQuery/jquery.min.js' %}"></script>
     <!-- Bootstrap JS -->
