@@ -1,9 +1,5 @@
 {% extends 'home/base.html' %} {% block content %} {% load static %}
-<style>
-    .card:hover {
-        transform: scale(1.1);
-    }
-</style>
+
 <!-- page title -->
 <section class="page-title-section overlay" data-background="{% static 'home/images/backgrounds/page-title.jpg' %}">
     <div class="container">
@@ -33,7 +29,7 @@
                 <div class="row">
                     <div class="col-sm-2">
                         <div class="row mb-1 mt-1 ml-1">
-                            <img class="card-img-top rounded-10" src="{{ posts.image.url }}" alt="teacher" style="max-width: 98%;">
+                            <img class="card-img-top rounded-10" style="height: auto;width: 98%;" src="{{ posts.image.url }}" alt="teacher">
                         </div>
                     </div>
                     <div class="col-sm-7 border-right mb-1 mt-1">
