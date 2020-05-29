@@ -45,6 +45,9 @@
         <img src="{% static 'home/images/preloader.gif' %}" alt="preloader">
     </div>
     <!-- preloader end -->
+    <link href='https://fonts.googleapis.com/css?family=Caesar Dressing' rel='stylesheet'>
+
+</style>
     <style>
         .smart-scroll {
             position: fixed;
@@ -66,7 +69,12 @@
         
         .navbar {
             min-height: 80px;
+
         }
+        .fontstyle {
+            font-family: 'Caesar Dressing';font-size: 22px;
+        }
+        
     </style>
     <!-- header -->
     <header class="header">
@@ -76,35 +84,35 @@
             <a class="navbar-brand" href="#">Brand</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+            </button>
             <div class="collapse navbar-collapse" id="main_nav">
-                <ul class="navbar-nav">
-                    <li class="nav-item {% block nav_item_home %}{% endblock nav_item_home %}"> <a class="nav-link" href="{% url 'home' %}">Home </a> </li>
-                    <li class="nav-item {% block nav_item_about %}{% endblock nav_item_about %}"><a class="nav-link" href="{% url 'about' %}"> About </a></li>
-                    <li class="nav-item dropdown view">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">COURSES
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item fontstyle fontstyle {% block nav_item_home %}{% endblock nav_item_home %}"> <a class="nav-link" href="{% url 'home' %}">Home </a> </li>
+                    <li class="nav-item fontstyle {% block nav_item_about %}{% endblock nav_item_about %}"><a class="nav-link" href="{% url 'about' %}"> About </a></li>
+                    <li class="nav-item dropdown view {% block nav_item_course %}{% endblock nav_item_course %}">
+                        <a class="nav-link fontstyle dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">COURSES
       </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'courseListHsc' %}">HSC</a>
-                            <a class="dropdown-item" href="{% url 'courseListSsc' %}">SSC</a>
+                            <a class="dropdown-item fontstyle" href="{% url 'courseListHsc' %}">HSC</a>
+                            <a class="dropdown-item fontstyle" href="{% url 'courseListSsc' %}">SSC</a>
                         </div>
                     </li>
-                    <li class="nav-item {% block nav_item_event %}{% endblock nav_item_event %}">
+                    <li class="nav-item fontstyle {% block nav_item_event %}{% endblock nav_item_event %}">
                         <a class="nav-link" href="{% url 'events' %}">EVENTS</a>
                     </li>
-                    <li class="nav-item @@blog">
-                        <a class="nav-link" href="{% url 'blog' %}">BLOG</a>
+                    <li class="nav-item {% block nav_item_blog %}{% endblock nav_item_blog %}">
+                        <a class="nav-link fontstyle" href="{% url 'blog' %}">BLOG</a>
                     </li>
-                    <li class="nav-item dropdown view">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MENTORS
+                    <li class="nav-item dropdown view {% block nav_item_mentor %}{% endblock nav_item_mentor %}">
+                        <a class="nav-link dropdown-toggle fontstyle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MENTORS
       </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{% url 'teacher_hsc' %}">HSC</a>
-                            <a class="dropdown-item" href="{% url 'teacher_ssc' %}">SSC</a>
+                            <a class="dropdown-item fontstyle" href="{% url 'teacher_hsc' %}">HSC</a>
+                            <a class="dropdown-item fontstyle" href="{% url 'teacher_ssc' %}">SSC</a>
                         </div>
                     </li>
-                    <li class="nav-item @@contact">
-                        <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+                    <li class="nav-item {% block nav_item_gallery %}{% endblock nav_item_gallery %}">
+                        <a class="nav-link fontstyle" href="{% url 'gallery' %}">Gallery</a>
                     </li>
                 </ul>
                 </ul>
