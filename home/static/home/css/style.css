@@ -284,7 +284,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #FFDC11;
+    background-color: rgb(26, 0, 141);
     z-index: 999999;
     display: flex;
     align-items: center;
@@ -347,7 +347,7 @@ a h4:hover {
 
 .section {
     padding-top: 80px;
-    padding-bottom: 90px;
+    padding-bottom: 300px;
 }
 
 .section-sm {
@@ -551,68 +551,6 @@ textarea.form-control {
     height: 500px;
 }
 
-.hero-section {
-    padding: 250px 0 290px;
-}
-
-.hero-slider .prevArrow,
-.hero-slider .nextArrow {
-    position: absolute;
-    bottom: -123px;
-    z-index: 9;
-    padding: 15px;
-    color: rgba(255, 255, 255, 0.5);
-    border: 0;
-    font-size: 30px;
-    transition: all linear .2s;
-    background: transparent;
-}
-
-.hero-slider .prevArrow:focus,
-.hero-slider .nextArrow:focus {
-    outline: 0;
-}
-
-.hero-slider .prevArrow:hover,
-.hero-slider .nextArrow:hover {
-    color: #ffbc3b;
-}
-
-.hero-slider .prevArrow {
-    right: 60px;
-}
-
-.hero-slider .nextArrow {
-    right: 0;
-}
-
-.hero-slider .slick-dots {
-    position: absolute;
-    left: 0;
-    bottom: -100px;
-    padding-left: 0;
-}
-
-.hero-slider .slick-dots li {
-    display: inline-block;
-    margin: 0 6px;
-}
-
-.hero-slider .slick-dots li.slick-active button {
-    background: #ffbc3b;
-}
-
-.hero-slider .slick-dots li button {
-    color: transparent;
-    padding: 0;
-    overflow: hidden;
-    height: 10px;
-    width: 10px;
-    background: rgba(255, 255, 255, 0.5);
-    border: 0;
-    outline: 0;
-}
-
 
 /* banner feature */
 
@@ -662,11 +600,6 @@ textarea.form-control {
 
 /* course */
 
-.card-btn {
-    font-size: 12px;
-    padding: 5px 10px;
-}
-
 .flex-basis-33 {
     flex-basis: 33.3333%;
 }
@@ -710,7 +643,7 @@ textarea.form-control {
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    background: #ffbc3b;
+    background: rgb(26, 0, 141);
     color: #fff;
     font-size: 20px;
     text-align: center;
@@ -743,7 +676,7 @@ textarea.form-control {
     width: 80%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    background: #ffbc3b;
+    background: rgb(26, 0, 141);
     border-radius: 50%;
     top: 50%;
     left: 50%;

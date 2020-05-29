@@ -2,7 +2,7 @@
 
 
 <!-- page title -->
-<section class="page-title-section overlay" data-background="{% static 'home/images/courses/course-1.jpg' %}">
+<section class="section bg-cover" data-background="{% static 'home/images/courses/classroom.jpg' %}">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -41,7 +41,7 @@
             {% for course in course_list %}
             <div data-category="{{ course.dept }}" class="col-lg-12 col-sm-6 mb-5 filtr-item">
                 <div class="card p-0 border-primary rounded-0 shadow">
-                    <img class="card-img-top rounded-0" src="" alt="course thumb">
+                    <img class="card-img-top rounded-0" src="{% static 'home/images/courses/Physics-01.png' %}" alt="course thumb">
                     <div class="card-body">
                         <ul class="list-inline mb-2">
                             <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
