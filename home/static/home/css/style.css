@@ -218,6 +218,12 @@ h6,
     border-color: #ffab08;
 }
 
+.dropdown:hover>.dropdown-menu {
+    display: block;
+    color: #fff;
+    border-color: #ffab08;
+}
+
 .btn-secondary {
     background: #fff;
     color: #ffbc3b;
