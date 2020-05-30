@@ -218,6 +218,12 @@ h6,
     border-color: #ffab08;
 }
 
+.dropdown:hover>.dropdown-menu {
+    display: block;
+    color: #fff;
+    border-color: #ffab08;
+}
+
 .btn-secondary {
     background: #fff;
     color: #ffbc3b;
@@ -284,7 +290,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(26, 0, 141);
+    /* background-color: rgb(26, 0, 141); */
+    background-color: #FFDC11;
     z-index: 999999;
     display: flex;
     align-items: center;
@@ -820,6 +827,7 @@ textarea.form-control {
     padding: 0 70px;
 }
 
+
 .carousel .item {
     color: #999;
     overflow: hidden;
@@ -899,4 +907,24 @@ textarea.form-control {
 
 .carousel-control.right i {
     margin-right: -2px;
+}
+
+
+.card-blog {
+    width: 80%;
+    align-content: center;
+    font-family: "futura-bold";
+    text-align: left;
+    padding: 100px;
+    color: #eee;
+}
+.card-blog:hover {
+    transform: scale(1.1);
+}
+    
+    
+
+.section-blog {
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
