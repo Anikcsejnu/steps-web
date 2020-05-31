@@ -24,7 +24,7 @@ def chapter_list(request, coursename):
     print(coursename)
     context = {
         'chapters':Chapter.objects.filter(name_of_course__name=coursename),
-        'coursename':coursename,
+        'coursename':Course.objects.filter(name = coursename).first(),
     }
     return render(request, 'course/chapterlist.html', context)
 
@@ -43,12 +43,14 @@ def topic_single(request, topicname):
     #print(Course.objects.filter(id=Topic.objects.filter(name_of_topic=topicname).first().course_name_id).first().name)
     #ch=Chapter.objects.filter(id=Topic.objects.filter(name_of_topic=topicname).first().chapter_id).first()
     #print(Topic.objects.filter(chapter__name_of_chapter=ch))
+    chaptername = Chapter.objects.filter(id=Topic.objects.filter(name_of_topic=topicname).first().chapter_id).first()
+    #print(Course.objects.filter(id=Chapter.objects.filter(name_of_chapter=chaptername).first().name_of_course_id).first(), chaptername, "helllllllllllll")
     context = {
 
         'topics': Tutorial.objects.filter(name_of_topic__name_of_topic=topicname),
         'topicname' : topicname,
         'chaptername' : Chapter.objects.filter(id=Topic.objects.filter(name_of_topic=topicname).first().chapter_id).first(),
-        'coursename' : Course.objects.filter(id=Topic.objects.filter(name_of_topic=topicname).first().course_name_id).first(),
+        'coursename' : Course.objects.filter(id=Chapter.objects.filter(name_of_chapter=chaptername).first().name_of_course_id).first(),
         'topiclist' :Topic.objects.filter(chapter__name_of_chapter=Chapter.objects.filter(id=Topic.objects.filter(name_of_topic=topicname).first().chapter_id).first()), 
     }
     #print(context['topics'])

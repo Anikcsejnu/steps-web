@@ -24,9 +24,19 @@ class Course(models.Model):
     short_details = models.CharField(max_length = 1000)
     dept = models.CharField(max_length = 100, choices = DEPARTMENT_CHOICES, default = 'Science')
     level = models.CharField(max_length = 100, choices = LEVEL_CHOICES, default = 'HSC')
-    
+    background = models.ImageField( default = 'course_background/default.jpg', upload_to='course_background')
+    thumbnail = models.ImageField( default = 'course_thumbnail/default.jpg', upload_to='course_thumbnail')
     def __str__(self):
-        return '{}'.format(self.name)
+        return self.name
+
+    def save(self, *args, **kwargs):
+	    super().save(*args, **kwargs)
+
+	    img = Image.open(self.thumbnail.path)
+
+	    if img.height > 523 or img.width > 228:
+		    img = img.resize((523, 228), Image.ANTIALIAS)
+		    img.save(self.thumbnail.path)
     
     
 
@@ -37,19 +47,13 @@ class Chapter(models.Model):
 
     def __str__(self):
         return self.name_of_chapter
+    
 
     
 
     
 class Topic(models.Model):
-    course_name = models.ForeignKey(Course, on_delete = models.CASCADE, default='')
-    chapter = ChainedForeignKey(Chapter, 
-                                chained_field="course_name", 
-                                chained_model_field="name_of_course",
-                                show_all=False,
-                                auto_choose=True,
-                                default='',
-                                ) 
+    chapter = models.ForeignKey(Chapter, on_delete = models.CASCADE, default = '') 
     name_of_topic = models.CharField(max_length = 200)
 
     def __str__(self):
@@ -58,26 +62,11 @@ class Topic(models.Model):
 
 class Tutorial(models.Model):
 
-    course_name = models.ForeignKey(Course, on_delete = models.CASCADE)
-    chapter = ChainedForeignKey(Chapter, 
-                                chained_field="course_name", 
-                                chained_model_field="name_of_course",
-                                show_all=False,
-                                auto_choose=True,
-                                default='',
-                                ) 
-    name_of_topic = ChainedForeignKey(Topic, 
-                                chained_field="chapter", 
-                                chained_model_field="chapter",
-                                show_all=False,
-                                auto_choose=True,
-                                default='',
-                                )
+    name_of_topic = models.ForeignKey(Topic, on_delete = models.CASCADE, default = '')
     name_of_teacher = models.ForeignKey(TeachersInfo, related_name='tutorials', on_delete = models.CASCADE)
     uploaded_time = models.DateTimeField(default=timezone.now())
     video_link = models.CharField(max_length=400, default = "")
     file_link = models.CharField(max_length=400, default=" ")
 
 
-    def __str__(self):
-        return '{}'.format(self.name_of_topic)
+    
