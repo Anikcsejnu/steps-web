@@ -1,99 +1,91 @@
-{% extends 'home/base.html' %}{% block nav_item_event %}active{% endblock nav_item_event %}
-{% block content %}
-{% load static %}
+{% extends 'home/base.html' %}{% block nav_item_event %}active{% endblock nav_item_event %} {% block content %} {% load static %}
 
 <!-- page title -->
 <section class="page-title-section overlay" data-background="{% static 'home/images/backgrounds/page-title.jpg' %}">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <ul class="list-inline custom-breadcrumb">
-          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Events</a></li>
-          <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
-        </ul>
-        <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item h2 text-primary font-secondary">Events</li>
+                    <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+                </ul>
+                <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 <!-- /page title -->
 
 <!-- courses -->
 <section class="section">
-  <div class="container">
-    <div class="row ">
-      <div class="col-12">
-        <!-- teacher category list -->
-        <ul class="list-inline text-center filter-controls mb-5">
-          <li class="list-inline-item m-3 text-uppercase active" data-filter="all">All</li>
-          <li class="list-inline-item m-3 text-uppercase" data-filter="upcoming">Upcoming
-          </li>
-          <li class="list-inline-item m-3 text-uppercase" data-filter="today">On going</li>
-          <li class="list-inline-item m-3 text-uppercase" data-filter="eairlier">Earlier</li> 
-        </ul>
-      </div>
-      <div class="row filtr-container">
-      <!-- event -->
-      {% for event in events %}
-
-        {% if event.date > today %}
-          <div data-category="upcoming" class="col-lg-4 col-sm-6 mb-5 filtr-item">
-        {% elif event.date == today %}
-          <div data-category="today" class="col-lg-4 col-sm-6 mb-5 filtr-item">
-        {% else %}
-          <div data-category="eairlier" class="col-lg-4 col-sm-6 mb-5 filtr-item">
-        {% endif %}    
-        
-          <div class="card border-0 rounded-0 hover-shadow">
-            <div class="card-img position-relative">
-              <img class="card-img-top rounded-0" src="{{ event.banner.url }}" alt="event thumb">
-              <div class="card-date"><span>{{ event.date.day }}</span><br>{{ event.date|date:'M' }}</div>
+    <div class="container">
+        <div class="row ">
+            <div class="col-12">
+                <!-- teacher category list -->
+                <ul class="list-inline text-center filter-controls mb-5">
+                    <li class="list-inline-item m-3 text-uppercase active" data-filter="all">All</li>
+                    <li class="list-inline-item m-3 text-uppercase" data-filter="upcoming">Upcoming
+                    </li>
+                    <li class="list-inline-item m-3 text-uppercase" data-filter="today">On going</li>
+                    <li class="list-inline-item m-3 text-uppercase" data-filter="eairlier">Earlier</li>
+                </ul>
             </div>
-            <div class="card-body">
-              <!-- location -->
-              <p><i class="ti-location-pin text-primary mr-2"></i>{{ event.location }}</p>
-              <a href="{% url 'eventdetails' event.id %}">
-                <h4 class="card-title">{{ event.event_title }}</h4>
-              </a>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-    </div>
-  </div>
+            <div class="row filtr-container">
+                <!-- event -->
+                {% for event in events %} {% if event.date > today %}
+                <div data-category="upcoming" class="col-lg-4 col-sm-6 mb-5 filtr-item">
+                    {% elif event.date == today %}
+                    <div data-category="today" class="col-lg-4 col-sm-6 mb-5 filtr-item">
+                        {% else %}
+                        <div data-category="eairlier" class="col-lg-4 col-sm-6 mb-5 filtr-item">
+                            {% endif %}
 
-<nav aria-label="Page navigation example">
-{% if events.has_other_pages %}
-  <ul class="pagination justify-content-center">
-    {% if events.has_previous %}
-      <li class="page-item">
-        <a class="page-link" href="?page={{ events.previous_page_number }}">&laquo;</a>
-      </li>
-    {% else %}
-      <li class="page-item disabled"><a class="page-link"><span>&laquo;</span></a></li>
-    {% endif %}
-    {% for i in events.paginator.page_range %}
-      {% if events.number == i %}
-        <li class="page-item active">
-          <a class="page-link"><span>{{ i }} <span class="sr-only">(current)</span></span></a>
-        </li>
-      {% else %}
-        <li class="page-item">
-          <a class="page-link" href="?page={{ i }}">{{ i }}</a>
-        </li>
-      {% endif %}
-    {% endfor %}
-    {% if events.has_next %}
-      <li class="page-item">
-        <a class="page-link" href="?page={{ events.next_page_number }}">&raquo;</a>
-      </li>
-    {% else %}
-      <li class="page-item disabled"><a class="page-link"><span>&raquo;</span></a></li>
-    {% endif %}
-  </ul>
-{% endif %}
-</nav>
+                            <div class="card border-0 rounded-0 hover-shadow">
+                                <div class="card-img position-relative">
+                                    <img class="card-img-top rounded-0" src="{{ event.banner.url }}" alt="event thumb">
+                                    <div class="card-date"><span>{{ event.date.day }}</span><br>{{ event.date|date:'M' }}</div>
+                                </div>
+                                <div class="card-body">
+                                    <!-- location -->
+                                    <p><i class="ti-location-pin text-primary mr-2"></i>{{ event.location }}</p>
+                                    <a href="{% url 'eventdetails' event.id %}">
+                                        <h4 class="card-title">{{ event.event_title }}</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <nav aria-label="Page navigation example">
+                {% if events.has_other_pages %}
+                <ul class="pagination justify-content-center">
+                    {% if events.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ events.previous_page_number }}">&laquo;</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled"><a class="page-link"><span>&laquo;</span></a></li>
+                    {% endif %} {% for i in events.paginator.page_range %} {% if events.number == i %}
+                    <li class="page-item active">
+                        <a class="page-link"><span>{{ i }} <span class="sr-only">(current)</span></span></a>
+                    </li>
+                    {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                    </li>
+                    {% endif %} {% endfor %} {% if events.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ events.next_page_number }}">&raquo;</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled"><a class="page-link"><span>&raquo;</span></a></li>
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </nav>
 </section>
 <!-- /courses -->
 {% endblock content %}

@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-8">
                 <ul class="list-inline custom-breadcrumb">
-                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">About Us</a></li>
+                    <li class="list-inline-item h2 text-primary font-secondary">About Us</li>
                     <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
                 </ul>
                 <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
@@ -28,12 +28,13 @@
 <!-- /page title -->
 
 <!-- about -->
-<section class="section-blog">
+<section class="section-blog shadow">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <abbr title="STEPS Iftar 2019"><img class="img-fluid w-100 mb-4" src="{% static 'home/images/about/team.jpg' %}" alt="about image"></abbr>
                 <h2 class="section-title">ABOUT OUR JOURNY</h2>
+
+                <abbr title="STEPS Iftar 2019"><img class="img-fluid w-75 mb-2 ml-3" src="{% static 'home/images/about/team.jpg' %}" alt="about image" style="float: right;"></abbr>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe ipsa illo
                     quod veritatis, magni debitis fugiat dolore voluptates! Consequatur, aliquid. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat perferendis sint optio similique. Et amet magni facilis vero corporis quos.</p>
                 <p>exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum
@@ -41,29 +42,49 @@
             </div>
         </div>
     </div>
+
 </section>
 <!-- /about -->
+<hr>
+<!-- Curriculum -->
+<section class="section-blog shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="section-title">WHAT WE TEACH</h2>
 
+                <abbr title="Our Classrooms"><img class="img-fluid w-50" src="{% static 'home/images/about/Tree aboutus.png' %}" alt="about image" style="float: right;"></abbr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe ipsa illo
+                    quod veritatis, magni debitis fugiat dolore voluptates! Consequatur, aliquid. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat perferendis sint optio similique. Et amet magni facilis vero corporis quos.</p>
+                <p>exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum
+                    a, facere fugit error accusamus est officiis vero in, nostrum laboriosam corrupti explicabo, cumque repudiandae deleniti perspiciatis quae consectetur enim. Laboriosam!</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!--Curriculum-->
+<hr>
 <!-- funfacts -->
-<section class="section-sm bg-primary">
+<section class="section-sm bg-primary shadow">
     <div class="container">
         <div class="row">
             <!-- funfacts item -->
-            <div class="col-md-5 col-sm-6 mb-4 mb-md-0">
+            <div class="col-md-4 col-sm-3 mb-4 mb-md-0">
                 <div class="text-center">
                     <h2 class="count text-white" data-count="{{ number_of_teacher }}">0</h2>
                     <h5 class="text-white">TEACHERS</h5>
                 </div>
             </div>
             <!-- funfacts item -->
-            <div class="col-md-2 col-sm-6 mb-4 mb-md-0">
+            <div class="col-md-4 col-sm-3 mb-4 mb-md-0">
                 <div class="text-center">
                     <h2 class="count text-white" data-count="{{ number_of_course }}">0</h2>
                     <h5 class="text-white">COURSES</h5>
                 </div>
             </div>
             <!-- funfacts item -->
-            <div class="col-md-5 col-sm-6 mb-4 mb-md-0">
+            <div class="col-md-4 col-sm-3 mb-4 mb-md-0">
                 <div class="text-center">
                     <h2 class="count text-white" data-count="1000">0</h2>
                     <h5 class="text-white">STUDENTS</h5>
@@ -75,11 +96,12 @@
 
         </div>
     </div>
+
 </section>
 <!-- /funfacts -->
-
+<hr>
 <!-- success story -->
-<section class="section-blog bg-cover" data-background="{% static 'home/images/about/about-page.jpg' %}">
+<section class="section-blog bg-cover shadow" data-background="{% static 'home/images/about/about-page.jpg' %}">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-sm-4 position-relative success-video">
@@ -99,9 +121,9 @@
     </div>
 </section>
 <!-- /success story -->
-
+<hr>
 <!-- teachers -->
-<section class="section-blog">
+<section class="section-blog shadow">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12">

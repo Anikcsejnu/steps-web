@@ -1,126 +1,124 @@
-{% extends 'home/base.html' %}
-{% block content %}
-{% load static %}
+{% extends 'home/base.html' %} {% block content %} {% load static %}
 
 <!-- page title -->
 <section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <ul class="list-inline custom-breadcrumb">
-          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="events.html">Events</a></li>
-          <li class="list-inline-item text-white h3 font-secondary nasted">Event Details</li>
-        </ul>
-        <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item h2 text-primary font-secondary">Events</li>
+                    <li class="list-inline-item text-white h3 font-secondary nasted">Event Details</li>
+                </ul>
+                <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 <!-- /page title -->
 
 <!-- event single -->
 <section class="section-sm">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h2 class="section-title">{{ object.event_title }}</h2>
-      </div>
-      <!-- event image -->
-      <div class="col-12 mb-4">
-        <img src="{{ object.banner.url }}" alt="event thumb" class="img-fluid w-100">
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="section-title">{{ object.event_title }}</h2>
+            </div>
+            <!-- event image -->
+            <div class="col-12 mb-4">
+                <img src="{{ object.banner.url }}" alt="event thumb" class="img-fluid w-100">
+            </div>
+        </div>
+        <!-- event info -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-9">
+                <ul class="list-inline">
+                    <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
+                        <div class="d-flex align-items-center">
+                            <i class="ti-location-pin text-primary icon-md mr-2"></i>
+                            <div class="text-left">
+                                <h6 class="mb-0">{{ object.location }}</h6>
+                                <p class="mb-0">{{ object.address }}</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
+                        <div class="d-flex align-items-center">
+                            <i class="ti-calendar text-primary icon-md mr-2"></i>
+                            <div class="text-left">
+                                <h6 class="mb-0">DATE</h6>
+                                <p class="mb-0">{{ object.date }}</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
+                        <div class="d-flex align-items-center">
+                            <i class="ti-time text-primary icon-md mr-2"></i>
+                            <div class="text-left">
+                                <h6 class="mb-0">TIME</h6>
+                                <p class="mb-0">{{ object.time|time:'g:iA'|lower }}</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
+                        <div class="d-flex align-items-center">
+                            <i class="ti-wallet text-primary icon-md mr-2"></i>
+                            <div class="text-left">
+                                <h6 class="mb-0">ENTRY FEE</h6>
+                                <p class="mb-0">From: {{ object.enrty_fee }}</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 text-lg-right text-left">
+                <a href="#" class="btn btn-primary">Join now</a>
+            </div>
+            <!-- border -->
+            <div class="col-12 mt-4 order-4">
+                <div class="border-bottom border-primary"></div>
+            </div>
+        </div>
+        <!-- event details -->
+        <div class="row">
+            <div class="col-12 mb-50">
+                <h3>About Event</h3>
+                <p>{{ object.details }}</p>
+            </div>
+        </div>
     </div>
-    <!-- event info -->
-    <div class="row align-items-center mb-5">
-      <div class="col-lg-9">
-        <ul class="list-inline">
-          <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
-            <div class="d-flex align-items-center">
-              <i class="ti-location-pin text-primary icon-md mr-2"></i>
-              <div class="text-left">
-                <h6 class="mb-0">{{ object.location }}</h6>
-                <p class="mb-0">{{ object.address }}</p>
-              </div>
-            </div>
-          </li>
-          <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
-            <div class="d-flex align-items-center">
-              <i class="ti-calendar text-primary icon-md mr-2"></i>
-              <div class="text-left">
-                <h6 class="mb-0">DATE</h6>
-                <p class="mb-0">{{ object.date }}</p>
-              </div>
-            </div>
-          </li>
-          <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
-            <div class="d-flex align-items-center">
-              <i class="ti-time text-primary icon-md mr-2"></i>
-              <div class="text-left">
-                <h6 class="mb-0">TIME</h6>
-                <p class="mb-0">{{ object.time|time:'g:iA'|lower }}</p>
-              </div>
-            </div>
-          </li>
-          <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
-            <div class="d-flex align-items-center">
-              <i class="ti-wallet text-primary icon-md mr-2"></i>
-              <div class="text-left">
-                <h6 class="mb-0">ENTRY FEE</h6>
-                <p class="mb-0">From: {{ object.enrty_fee }}</p>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-3 text-lg-right text-left">
-        <a href="#" class="btn btn-primary">Join now</a>
-      </div>
-      <!-- border -->
-      <div class="col-12 mt-4 order-4">
-        <div class="border-bottom border-primary"></div>
-      </div>
-    </div>
-    <!-- event details -->
-    <div class="row">
-      <div class="col-12 mb-50">
-        <h3>About Event</h3>
-        <p>{{ object.details }}</p>
-      </div>
-    </div>
-  </div>
 </section>
 <!-- /event single -->
 
 <!-- more event -->
 <section class="section pt-0">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h2 class="section-title">More Events</h2>
-      </div>
-    </div>
-    <div class="row justify-content">
-  <!-- event -->
-  {% for event in all_objects %}
-      {% if event != object %}
-          <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-            <div class="card border-0 rounded-0 hover-shadow">
-              <div class="card-img position-relative">
-                <img class="card-img-top rounded-0" src="{{ event.banner.url }}" alt="event thumb">
-                <div class="card-date"><span>{{ event.date.day }}</span><br>{{ event.date|date:'M' }}</div>
-              </div>
-              <div class="card-body">
-                <!-- location -->
-                <p><i class="ti-location-pin text-primary mr-2"></i>{{ event.location }}</p>
-                <a href="{% url 'eventdetails' event.id %}"><h4 class="card-title">{{ event.event_title }}</h4></a>
-              </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="section-title">More Events</h2>
             </div>
-          </div>
-      {% endif %}
-  {% endfor %}
-  
-</div>
-  </div>
+        </div>
+        <div class="row justify-content">
+            <!-- event -->
+            {% for event in all_objects %} {% if event != object %}
+            <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+                <div class="card border-0 rounded-0 hover-shadow">
+                    <div class="card-img position-relative">
+                        <img class="card-img-top rounded-0" src="{{ event.banner.url }}" alt="event thumb">
+                        <div class="card-date"><span>{{ event.date.day }}</span><br>{{ event.date|date:'M' }}</div>
+                    </div>
+                    <div class="card-body">
+                        <!-- location -->
+                        <p><i class="ti-location-pin text-primary mr-2"></i>{{ event.location }}</p>
+                        <a href="{% url 'eventdetails' event.id %}">
+                            <h4 class="card-title">{{ event.event_title }}</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endif %} {% endfor %}
+
+        </div>
+    </div>
 </section>
 <!-- /more event -->
 

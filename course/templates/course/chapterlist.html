@@ -8,18 +8,21 @@
     .h:hover {
         color: rgb(255, 255, 255);
     }
+    
+    .card {
+        border-radius: 10em;
+    }
 </style>
 
 
 <section class="page-title-section bg-cover overlay" data-background="{{ coursename.background.url }}">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
-                <ul class="list-inline custom-breadcrumb">
-                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="courses.html">Our Courses</a></li>
+            <div class="col-md-12 mt-5">
+                <ul class="list-inline custom-breadcrumb mt-5">
+                    <li class="list-inline-item h2 text-primary font-secondary">Classroom</li>
                     <li class="list-inline-item text-white h3 font-secondary nasted"> {{ coursename.name }}</li>
                 </ul>
-                <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
             </div>
         </div>
     </div>
@@ -28,7 +31,7 @@
 <div>
     <div class="container mt-2">
         {% for chapter in chapters %}
-        <div class="card rounded-5 shadow hv">
+        <div class="card shadow hv">
             <div class="row" align="center">
                 <div class="col-sm-12 border-left border-right">
                     <a href="{% url 'topiclist' chapter %}">
