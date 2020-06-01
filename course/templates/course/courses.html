@@ -1,21 +1,8 @@
-{% extends 'home/base.html' %} 
-{% block nav_item_course %}active{% endblock nav_item_course %} 
-{% load static %} {% block content %}
+{% extends 'home/base.html' %} {% block nav_item_course %}active{% endblock nav_item_course %} {% load static %} {% block content %}
 
 <!-- page title -->
 <section class="section bg-cover" data-background="{% static 'home/images/courses/classroom.jpg' %}">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <ul class="list-inline custom-breadcrumb">
-                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="courses.html">Our Courses</a>
-                    </li>
-                    <li class="list-inline-item text-white h3 font-secondary "></li>
-                </ul>
-                <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
-            </div>
-        </div>
-    </div>
+
 </section>
 <!-- /page title -->
 
@@ -40,13 +27,12 @@
         <div class="row filtr-container">
             <!-- course item -->
             {% for course in course_list %}
-            <div data-category="{{ course.dept }}" class="col-lg-12 col-sm-6 mb-5 filtr-item">
+            <div data-category="{{ course.dept }}" class="col-lg-6 col-sm-3 mb-5 filtr-item">
                 <div class="card p-0 border-primary rounded-0 shadow">
-                    <img class="card-img-top rounded-0" src="{% static 'home/images/courses/Physics-01.png' %}" alt="course thumb">
+                    <img class="card-img-top img-thumbnail rounded-0" src="{{ course.thumbnail.url }}" alt="course thumb">
                     <div class="card-body">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>02-14-2018</li>
-                            <li class="list-inline-item"><a class="text-color" href="">{{ course.dept }}</a></li>
+                            <li class="list-inline-item">{{ course.dept }}</li>
                         </ul>
                         <a href="{% url 'chapterlist' course.name %}">
                             <h4 class="card-title">{{ course.name }}</h4>
@@ -54,6 +40,7 @@
                         <p class="card-text mb-4"> {{ course.short_details }}</p>
                     </div>
                 </div>
+                <hr>
             </div>
             {% endfor %}
 

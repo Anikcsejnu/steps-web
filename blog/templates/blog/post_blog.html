@@ -2,28 +2,28 @@
 <style>
     .con {
         backdrop-filter: blur(0px);
+        border-style: dashed;
     }
 </style>
 
 
-<section class="section overlay bg-cover" data-background="{% static 'home/images/blog/writing.jpg' %}">
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <ul class="list-inline custom-breadcrumb">
-                        <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Post Blog</a></li>
-                        <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
-                    </ul>
-                    <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
-                </div>
+<section class="overlay bg-cover" data-background="{% static 'home/images/blog/writing.jpg' %}">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8  mt-3">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item h2 text-primary font-secondary">Post Blog</li>
+                </ul>
+                <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
             </div>
         </div>
-    </section>
+    </div>
+    <hr>
     <div class="container">
         <!-- post card -->
         <div class="row">
-            <form class="needs-validation pl-2 pr-2 pt-2 pd-2 rounded-10 con" action="{% url 'post_blog' %}" method="POST" enctype="multipart/form-data" novalidate>
+            <form class="needs-validation pl-2 pr-2 pt-2 pb-2 mb-2 rounded-10 con" action="{% url 'post_blog' %}" method="POST" enctype="multipart/form-data" novalidate>
                 <h2 align="center" class="text-white">Write your post here</h2>
                 <hr> {%csrf_token%}
                 <div class="form-row">

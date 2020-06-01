@@ -39,7 +39,7 @@
 
 </head>
 
-<body>
+<body style="background-color: rgb(255, 255, 255);">
     <!-- preloader start -->
     <div class="preloader">
         <img src="{% static 'home/images/preloader.gif' %}" alt="preloader">
@@ -47,7 +47,7 @@
     <!-- preloader end -->
     <link href='https://fonts.googleapis.com/css?family=Caesar Dressing' rel='stylesheet'>
 
-</style>
+    </style>
     <style>
         .smart-scroll {
             position: fixed;
@@ -69,12 +69,12 @@
         
         .navbar {
             min-height: 80px;
-
-        }
-        .fontstyle {
-            font-family: 'Caesar Dressing';font-size: 22px;
         }
         
+        .fontstyle {
+            font-family: 'Caesar Dressing';
+            font-size: 22px;
+        }
     </style>
     <!-- header -->
     <header class="header">
@@ -90,8 +90,7 @@
                     <li class="nav-item fontstyle fontstyle {% block nav_item_home %}{% endblock nav_item_home %}"> <a class="nav-link" href="{% url 'home' %}">Home </a> </li>
                     <li class="nav-item fontstyle {% block nav_item_about %}{% endblock nav_item_about %}"><a class="nav-link" href="{% url 'about' %}"> About </a></li>
                     <li class="nav-item dropdown view {% block nav_item_course %}{% endblock nav_item_course %}">
-                        <a class="nav-link fontstyle dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">COURSES
-      </a>
+                        <a class="nav-link fontstyle dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CLASSROOM</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item fontstyle" href="{% url 'courseListHsc' %}">HSC</a>
                             <a class="dropdown-item fontstyle" href="{% url 'courseListSsc' %}">SSC</a>
@@ -126,12 +125,11 @@
     {% block content %}{% endblock %}
     <!-- footer -->
     <footer>
-        <div class="footer bg-footer section border-bottom">
+        <div class="footer bg-cover section border-bottom" data-background="{% static 'home/images/footer.png' %}">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+                    <div class="col-lg-12 col-sm-8 mt-5 mb-lg-0">
                         <!-- logo -->
-                        <a class="logo-footer" href="index.html"><img class="img-fluid mb-4" src="{% static 'home/images/logo.png' %}" alt="logo"></a>
                         <ul class="list-unstyled">
                             <li class="mb-2">Shahjadpur, Dhaka-1212</li>
                             <li class="mb-2">+880 1922-444626</li>
@@ -139,45 +137,6 @@
                             <li class="mb-2">omarfaruqe1750@gmail.com</li>
                         </ul>
                     </div>
-                    <!-- company -->
-                    <!-- <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-              <h4 class="text-white mb-5">COMPANY</h4>
-              <ul class="list-unstyled">
-                <li class="mb-3"><a class="text-color" href="about.html">About Us</a></li>
-                <li class="mb-3"><a class="text-color" href="teacher.html">Our Teacher</a></li>
-                <li class="mb-3"><a class="text-color" href="contact.html">Contact</a></li>
-                <li class="mb-3"><a class="text-color" href="blog.html">Blog</a></li>
-              </ul>
-            </div>
-            <!-- links -->
-                    <!--  <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-              <h4 class="text-white mb-5">LINKS</h4>
-              <ul class="list-unstyled">
-                <li class="mb-3"><a class="text-color" href="courses.html">Courses</a></li>
-                <li class="mb-3"><a class="text-color" href="event.html">Events</a></li>
-                <li class="mb-3"><a class="text-color" href="gallary.html">Gallary</a></li>
-                <li class="mb-3"><a class="text-color" href="faqs.html">FAQs</a></li>
-              </ul>
-            </div>
-            <!-- support -->
-                    <!-- <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-              <h4 class="text-white mb-5">SUPPORT</h4>
-              <ul class="list-unstyled">
-                <li class="mb-3"><a class="text-color" href="#">Forums</a></li>
-                <li class="mb-3"><a class="text-color" href="#">Documentation</a></li>
-                <li class="mb-3"><a class="text-color" href="#">Language</a></li>
-                <li class="mb-3"><a class="text-color" href="#">Release Status</a></li>
-              </ul>
-            </div> -->
-                    <!-- support -->
-                    <!--  <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-              <h4 class="text-white mb-5">RECOMMEND</h4>
-              <ul class="list-unstyled">
-                <li class="mb-3"><a class="text-color" href="#">WordPress</a></li>
-                <li class="mb-3"><a class="text-color" href="#">LearnPress</a></li>
-                <li class="mb-3"><a class="text-color" href="#">WooCommerce</a></li>
-                <li class="mb-3"><a class="text-color" href="#">bbPress</a></li>
-              </ul> -->
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 {% extends 'home/base.html' %} {% block content %}
 <style>
     .h:hover {
-        color: #ffbb00;
+        color: #ffffff;
     }
     
     .h {
@@ -10,44 +10,130 @@
     
     .card {
         background-color: rgb(19, 19, 65);
+        border-radius: 10em;
     }
     
     .hv:hover {
-        background-color: rgb(255, 255, 255);
+        background-color: #ffbb00;
         transform: scale(1.1)
+    }
+    
+    .list-type1 {
+        width: 400px;
+        margin: 0 auto;
+    }
+    
+    .list-type1 ol {
+        counter-reset: li;
+        list-style: none;
+        *list-style: decimal;
+        font-size: 15px;
+        font-family: 'Raleway', sans-serif;
+        padding: 0;
+        margin-bottom: 4em;
+    }
+    
+    .list-type1 ol ol {
+        margin: 0 0 0 2em;
+    }
+    
+    .list-type1 a {
+        position: relative;
+        display: block;
+        padding: .4em .4em .4em 2em;
+        *padding: .4em;
+        margin: .5em 0;
+        background: rgb(0, 9, 88);
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        -moz-border-radius: .3em;
+        -webkit-border-radius: .3em;
+        border-radius: 10em;
+        transition: all .2s ease-in-out;
+    }
+    
+    .list-type1 a:hover {
+        background: #fc7f0a;
+        text-decoration: none;
+        transform: scale(1.1);
+    }
+    
+    .list-type1 a:before {
+        content: counter(li);
+        counter-increment: li;
+        position: absolute;
+        left: -1.3em;
+        top: 50%;
+        margin-top: -1.3em;
+        background: rgb(0, 9, 88);
+        height: 2em;
+        width: 2em;
+        line-height: 2em;
+        border: .3em solid #fff;
+        text-align: center;
+        font-weight: bold;
+        -moz-border-radius: 2em;
+        -webkit-border-radius: 2em;
+        border-radius: 2em;
+        color: #FFF;
     }
 </style>
 
 
-<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+<section class="page-title-section bg-cover overlay" data-background="{{ coursename.background.url }}">
     <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <ul class="list-inline custom-breadcrumb">
-                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="courses.html">Our Courses</a>
-                    </li>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <ul class="list-inline custom-breadcrumb mt-5">
+                    <li class="list-inline-item h2 text-primary font-secondary">Classroom</li>
                     <li class="list-inline-item text-white h3 font-secondary nasted"><a href="{% url 'chapterlist' coursename %}" class="text-white lit">{{ coursename }}</a></li>
                     <li class="list-inline-item text-white h3 font-secondary nasted">{{ chaptername }}</li>
                 </ul>
-                <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
             </div>
         </div>
     </div>
 </section>
-<div>
-    <div class="container mt-2">
-        {% for topic in topics %}
-        <div class="card rounded-5 border-primary shadow hv">
-            <div class="row" align="center">
-                <div class="col-sm-12 border-left border-right">
-                    <a href="{% url 'topicsingle' topic.name_of_topic %}">
-                        <h1 class="h">{{ topic.name_of_topic }}</h1>
-                    </a>
+<section class="">
+    <div class="row mb-5 border-bottom border-primary">
+        <div class="col-sm-7 border-right shadow">
+            <div class="">
+                <h1 class="pb-2 pt-2">
+                    <center>Topics</center>
+                </h1>
+                <hr>
+                <div>
+                    <div class="container mt-2" style="width: 75%;">
+                        {% for topic in topics %}
+                        <div class="card border-primary shadow hv">
+                            <div class="row" align="center">
+                                <div class="col-sm-12 border-left border-right">
+                                    <a href="{% url 'topicsingle' topic.name_of_topic %}">
+                                        <p class="h h3">{{ topic.name_of_topic }}</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr> {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
-        <hr> {% endfor %}
+        <div class="col-sm-5 align-right shadow">
+            <h1 class=" pb-2 pt-2">
+                <center>Other Chapters</center>
+            </h1>
+            <hr>
+            <div class="list-type1">
+                <ol>
+                    {% for chapter in chapterlist %} {% if chapter.name_of_chapter|stringformat:"s" != chaptername|stringformat:"s" %}
+                    <li><a href="{% url 'topiclist' chapter.name_of_chapter %}">{{ chapter.name_of_chapter }}</a></li>
+                    {% endif %} {% endfor %}
+                </ol>
+            </div>
+        </div>
     </div>
-</div>
+</section>
+
+
 
 {% endblock %}

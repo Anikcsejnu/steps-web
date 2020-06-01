@@ -506,7 +506,8 @@ a h4:hover {
 /* page title */
 
 .page-title-section {
-    padding: 200px 0 80px;
+    align-content: center;
+    padding: 200px 0 20px;
 }
 
 .custom-breadcrumb li.nasted {
@@ -823,10 +824,9 @@ textarea.form-control {
 /*# sourceMappingURL=maps/style.css.map */
 
 .carousel {
-    margin: 50px auto;
-    padding: 0 70px;
+    margin: 0px;
+    padding: 0px;
 }
-
 
 .carousel .item {
     color: #999;
@@ -909,7 +909,6 @@ textarea.form-control {
     margin-right: -2px;
 }
 
-
 .card-blog {
     width: 80%;
     align-content: center;
@@ -918,11 +917,10 @@ textarea.form-control {
     padding: 100px;
     color: #eee;
 }
+
 .card-blog:hover {
     transform: scale(1.1);
 }
-    
-    
 
 .section-blog {
     padding-top: 30px;

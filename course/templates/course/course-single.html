@@ -53,8 +53,8 @@
         padding: .4em .4em .4em 2em;
         *padding: .4em;
         margin: .5em 0;
-        background: #93C775;
-        color: #000;
+        background: rgb(0, 9, 88);
+        color: rgb(255, 255, 255);
         text-decoration: none;
         -moz-border-radius: .3em;
         -webkit-border-radius: .3em;
@@ -63,7 +63,7 @@
     }
     
     .list-type1 a:hover {
-        background: #d6d4d4;
+        background: #fc7f0a;
         text-decoration: none;
         transform: scale(1.1);
     }
@@ -75,7 +75,7 @@
         left: -1.3em;
         top: 50%;
         margin-top: -1.3em;
-        background: #93C775;
+        background: rgb(0, 9, 88);
         height: 2em;
         width: 2em;
         line-height: 2em;
@@ -92,17 +92,15 @@
 
 
 <!-- page title -->
-<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+<section class="page-title-section bg-cover overlay" data-background="{{ coursename.background.url }}">
     <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <ul class="list-inline custom-breadcrumb">
-                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="courses.html">Our Courses</a>
-                    </li>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <ul class="list-inline custom-breadcrumb mt-5">
+                    <li class="list-inline-item h2 text-primary font-secondary">Classroom</li>
                     <li class="list-inline-item text-white h3 font-secondary nasted"><a href="{% url 'chapterlist' coursename %}" class="text-white lit">{{ coursename }}</a></li>
                     <li class="list-inline-item text-white h3 font-secondary nasted"><a href="{% url 'topiclist' chaptername %}" class="text-white lit">{{ chaptername }}</a></li>
                 </ul>
-                <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
             </div>
         </div>
     </div>
@@ -111,7 +109,7 @@
 
 <!-- section -->
 <section class="section-sm">
-    <div class="mb-20 mt-0">
+    <div class="mb-50 mt-0">
         <center>
             <h1>{{ topicname }}</h1>
         </center>
@@ -119,8 +117,8 @@
     <hr class="style13">
 
     <!-- course info -->
-    <div class="row align-items-center mb-5 border-bottom border-primary">
-        <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2 border-right">
+    <div class="row mb-5 border-bottom border-primary">
+        <div class="col-sm-6 border-right">
             <div class="">
                 <h3>
                     <center>Tutorials</center>
@@ -174,7 +172,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-xl-6 order-sm-3 order-xl-2 col-12 order-2 align-right">
+        <div class="col-sm-6 align-right">
             <h3>
                 <center>More Topics</center>
             </h3>
