@@ -94,6 +94,34 @@
     </div>
     <hr> {% endfor %}
 
+    <nav aria-label="Page navigation example">
+                {% if postlist.has_other_pages %}
+                <ul class="pagination justify-content-center">
+                    {% if postlist.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ postlist.previous_page_number }}">&laquo;</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled"><a class="page-link"><span>&laquo;</span></a></li>
+                    {% endif %} {% for i in postlist.paginator.page_range %} {% if postlist.number == i %}
+                    <li class="page-item active">
+                        <a class="page-link"><span>{{ i }} <span class="sr-only">(current)</span></span></a>
+                    </li>
+                    {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                    </li>
+                    {% endif %} {% endfor %} {% if postlist.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ postlist.next_page_number }}">&raquo;</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled"><a class="page-link"><span>&raquo;</span></a></li>
+                    {% endif %}
+                </ul>
+                {% endif %}
+            </nav>
+
 
 </section>
 <!-- /blogs -->
