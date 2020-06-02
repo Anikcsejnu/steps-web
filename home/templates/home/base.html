@@ -75,13 +75,17 @@
             font-family: 'Caesar Dressing';
             font-size: 22px;
         }
+        
+        .hv:hover {
+            transform: scale(1.2);
+        }
     </style>
     <!-- header -->
     <header class="header">
 
         <!-- navbar -->
         <nav class="navbar smart-scroll navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="#"><img src="{% static 'home/images/1.png' %}" alt="" style="width: 267px;height: auto;"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
             </button>
@@ -103,8 +107,7 @@
                         <a class="nav-link fontstyle" href="{% url 'blog' %}">BLOG</a>
                     </li>
                     <li class="nav-item dropdown view {% block nav_item_mentor %}{% endblock nav_item_mentor %}">
-                        <a class="nav-link dropdown-toggle fontstyle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MENTORS
-      </a>
+                        <a class="nav-link dropdown-toggle fontstyle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MENTORS</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item fontstyle" href="{% url 'teacher_hsc' %}">HSC</a>
                             <a class="dropdown-item fontstyle" href="{% url 'teacher_ssc' %}">SSC</a>
@@ -139,27 +142,27 @@
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
-        <!-- copyright -->
-        <div class="copyright py-4 bg-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-7 text-sm-left text-center">
-                        <p class="mb-0">Copyright
-                            <script>
-                                var CurrentYear = new Date().getFullYear()
-                                document.write(CurrentYear)
-                            </script>
-                            © STEPS IT</p>
+            <!-- copyright -->
+            <div class="copyright py-4 bg-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-7 text-sm-left text-center">
+                            <p class="mb-0">Copyright
+                                <script>
+                                    var CurrentYear = new Date().getFullYear()
+                                    document.write(CurrentYear)
+                                </script>
+                                © STEPS IT</p>
+                        </div>
                     </div>
-                    <div class="col-sm-5 text-sm-right text-center">
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-facebook text-primary"></i></a></li>
-                            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-twitter-alt text-primary"></i></a></li>
-                            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-linkedin text-primary"></i></a></li>
-                            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="ti-instagram text-primary"></i></a></li>
-                        </ul>
+                    <div class="row">
+                        <div class="col-sm-7 text-sm-left text-center">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.facebook.com/Stepsians-113518887048688/"><i class="fa fa-facebook-square h3 hv text-white" aria-hidden="true"></i></a></li>
+                                <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.facebook.com/groups/593585494697269/"><i class="fa fa-users h3 hv text-white" aria-hidden="true"></i></a></li>
+                                <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="fa fa-youtube-play h3 hv text-white" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

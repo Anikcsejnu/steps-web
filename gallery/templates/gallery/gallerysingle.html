@@ -1,7 +1,7 @@
 {% extends 'home/base.html' %} {% load static %} {% block content %}
 
 <!-- page title -->
-<section class="page-title-section overlay" data-background="{% static 'home/images/backgrounds/page-title.jpg' %}">
+<section class="page-title-section bg-cover overlay" data-background="{% static 'home/images/gallerybackground.png' %}">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -34,11 +34,11 @@
                     <img src="{{  img.image.url  }}" class="img-fluid img-thumbnail" style="width: 400px; height: 350px;">
                 </a>
             </div>
-
             {% endfor %}
         </div>
     </div>
 </section>
+
 
 
 <script>
