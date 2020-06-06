@@ -11,7 +11,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def events(request):
 	event_list = Event.objects.all().order_by('-date')
 	page = request.GET.get('page', 1)
-	paginator = Paginator(event_list, 1)
+	paginator = Paginator(event_list, 10)
 	try:
 		events = paginator.page(page)
 	except PageNotAnInteger:
