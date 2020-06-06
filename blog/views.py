@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Blog
 from .form import BlogForm
 from django.views.generic import DetailView
+from django.shortcuts import redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
@@ -10,7 +11,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def blog(request):
 	post_list = Blog.objects.filter(status=True).order_by('-time')
 	page = request.GET.get('page', 1)
-	paginator = Paginator(post_list, 1)
+	paginator = Paginator(post_list, 10)
 	try:
 		posts = paginator.page(page)
 	except PageNotAnInteger:
@@ -41,7 +42,7 @@ def post_blog(request):
          blog.status = False
          blog.image = MyBlogForm.cleaned_data["image"]
          blog.save()
-         return render(request, 'blog/blog.html')
+         return redirect('blog')
 	else:
 		return render(request, 'blog/post_blog.html')
 
