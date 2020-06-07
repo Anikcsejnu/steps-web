@@ -22,6 +22,7 @@ def index(request):
 
 
 def about(request):
+	print(TeachersInfo.objects.all().count(), Course.objects.all().count())
 	context = {
 		'number_of_teacher':TeachersInfo.objects.all().count(),
 		'number_of_course':Course.objects.all().count(),

@@ -12,20 +12,20 @@ VERSION:  Versoin Number
 
 /*  typography */
 
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:600,700");
 @font-face {
-    font-family: 'futura-bold';
-    src: url("../fonts/Futura-Bold.woff") format("woff");
+    font-family: 'opensansbold';
+    src: url("../fonts/opensans-bold-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
 
 body {
     line-height: 1.2;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Open Sans';
     -webkit-font-smoothing: antialiased;
     font-size: 15px;
-    color: #5c5c77;
+    color: #001730;
 }
 
 abbr[title] {
@@ -36,11 +36,11 @@ abbr[title] {
 
 p,
 .paragraph {
-    font-weight: 400;
-    color: #5c5c77;
+    font-weight: 450;
+    color: #001730;
     font-size: 15px;
     line-height: 1.9;
-    font-family: "Poppins", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 h1,
@@ -49,8 +49,8 @@ h3,
 h4,
 h5,
 h6 {
-    color: #1e1e4b;
-    font-family: "futura-bold";
+    color: #001123;
+    font-family: "opensansbold";
     font-weight: 700;
     line-height: 1.2;
 }
@@ -132,7 +132,7 @@ h6,
 
 .btn {
     font-size: 16px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Open Sans", sans-serif;
     text-transform: capitalize;
     padding: 15px 40px;
     border-radius: 0;
@@ -188,7 +188,7 @@ h6,
 }
 
 .btn-primary {
-    background: #ffbc3b;
+    background: #001123;
     color: #fff;
 }
 
@@ -197,8 +197,8 @@ h6,
 }
 
 .btn-primary:active {
-    background: #ffbc3b !important;
-    color: #ffbc3b;
+    background: #001123 !important;
+    color: #001123;
 }
 
 .btn-primary:active::before {
@@ -206,36 +206,36 @@ h6,
 }
 
 .btn-primary:hover {
-    background: #ffab08;
-    color: #ffbc3b;
+    background: #001123;
+    color: #001730;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
 .btn-primary:not(:disabled):not(.disabled):active,
 .show>.btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #ffab08;
-    border-color: #ffab08;
+    background-color: #001123;
+    border-color: #001123;
 }
 
 .dropdown:hover>.dropdown-menu {
     display: block;
     color: #fff;
-    border-color: #ffab08;
+    border-color: #001123;
 }
 
 .btn-secondary {
     background: #fff;
-    color: #ffbc3b;
+    color: #001123;
     border: 1px solid #fff;
 }
 
 .btn-secondary::before {
-    background: #ffbc3b;
+    background: #001123;
 }
 
 .btn-secondary:active {
-    background: #ffbc3b;
+    background: #001123;
     color: #fff;
     border: 1px solid #fff;
 }
@@ -247,8 +247,8 @@ h6,
 }
 
 .btn-primary-outline {
-    border: 1px solid #ffbc3b;
-    color: #ffbc3b;
+    border: 1px solid #001123;
+    color: #001123;
     background: transparent;
 }
 
@@ -257,12 +257,12 @@ h6,
 }
 
 .btn-primary-outline:hover {
-    background: #ffbc3b;
-    color: #ffbc3b;
+    background: #001123;
+    color: #001123;
 }
 
 .btn-primary-outline:active {
-    background: #ffbc3b;
+    background: #001123;
     color: #fff;
 }
 
@@ -272,12 +272,12 @@ body {
 }
 
 ::-moz-selection {
-    background: #ffcd6e;
+    background: #ECC02E;
     color: #fff;
 }
 
 ::selection {
-    background: #ffcd6e;
+    background: #ECC02E;
     color: #fff;
 }
 
@@ -291,7 +291,7 @@ body {
     right: 0;
     bottom: 0;
     /* background-color: rgb(26, 0, 141); */
-    background-color: #FFDC11;
+    background-color: #001123;
     z-index: 999999;
     display: flex;
     align-items: center;
@@ -302,6 +302,7 @@ ol,
 ul {
     list-style-type: none;
     margin: 0px;
+    font-family: opensansbold;
 }
 
 img {
@@ -329,15 +330,15 @@ select:focus {
 }
 
 a:hover {
-    color: #ffbc3b;
+    color: #ECC02E;
 }
 
 a.text-primary:hover {
-    color: #ffbc3b !important;
+    color: #ECC02E !important;
 }
 
 a.text-light:hover {
-    color: #ffbc3b !important;
+    color: #ECC02E !important;
 }
 
 h4 {
@@ -345,7 +346,7 @@ h4 {
 }
 
 a h4:hover {
-    color: #ffbc3b;
+    color: #ECC02E;
 }
 
 .slick-slide {
@@ -390,8 +391,9 @@ a h4:hover {
     width: 100%;
     top: 0;
     left: 0;
-    background: #1a1a37;
-    opacity: .8;
+    backdrop-filter: blur(5px);
+    background: #011730;
+    opacity: 0.8;
 }
 
 .outline-0 {
@@ -403,11 +405,11 @@ a h4:hover {
 }
 
 .bg-primary {
-    background: #ffbc3b !important;
+    background: #001123 !important;
 }
 
 .bg-secondary {
-    background: #1a1a37 !important;
+    background: #ECC02E !important;
 }
 
 .bg-gray {
@@ -415,11 +417,11 @@ a h4:hover {
 }
 
 .text-primary {
-    color: #ffbc3b !important;
+    color: #ECC02E !important;
 }
 
 .text-color {
-    color: #5c5c77;
+    color: #001730;
 }
 
 .text-light {
@@ -435,11 +437,11 @@ a h4:hover {
 }
 
 .text-dark {
-    color: #1e1e4b !important;
+    color: #001123 !important;
 }
 
 .font-secondary {
-    font-family: "futura-bold";
+    font-family: "opensansbold";
 }
 
 .mb-10 {
@@ -545,7 +547,7 @@ a h4:hover {
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    background: #ffbc3b;
+    background: #ECC02E;
     left: -25px;
     top: 5px;
 }
@@ -564,7 +566,7 @@ textarea.form-control {
 
 .feature-icon {
     font-size: 50px;
-    color: #ffbc3b;
+    color: #001123;
     display: inline-block;
 }
 
@@ -651,7 +653,7 @@ textarea.form-control {
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    background: rgb(26, 0, 141);
+    background: #001123;
     color: #fff;
     font-size: 20px;
     text-align: center;
@@ -684,7 +686,7 @@ textarea.form-control {
     width: 80%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    background: rgb(26, 0, 141);
+    background: #001123;
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -712,8 +714,8 @@ textarea.form-control {
 
 .card-date {
     position: absolute;
-    background: #ffbc3b;
-    font-family: "futura-bold";
+    background: #ECC02E;
+    font-family: "opensansbold";
     text-align: center;
     padding: 10px;
     color: #fff;
@@ -745,7 +747,7 @@ textarea.form-control {
 /* footer */
 
 .newsletter {
-    background-image: linear-gradient(to right, transparent 50%, #ffbc3b 50%);
+    background-image: linear-gradient(to right, transparent 50%, #ECC02E 50%);
     margin-bottom: -170px;
     position: relative;
     z-index: 1;
@@ -781,7 +783,7 @@ textarea.form-control {
 }
 
 .form-control:focus {
-    border-color: #ffbc3b;
+    border-color: #ECC02E;
     box-shadow: none;
 }
 
@@ -813,11 +815,11 @@ textarea.form-control {
 
 .filter-controls li.active {
     font-weight: 600;
-    color: #ffbc3b;
+    color: #ECC02E;
 }
 
 .filter-controls li:hover {
-    color: #ffbc3b;
+    color: #ECC02E;
 }
 
 
@@ -912,7 +914,7 @@ textarea.form-control {
 .card-blog {
     width: 80%;
     align-content: center;
-    font-family: "futura-bold";
+    font-family: "opensansbold";
     text-align: left;
     padding: 100px;
     color: #eee;
@@ -928,38 +930,33 @@ textarea.form-control {
 }
 
 
-
 /* add css for pagination */
-.pagination > li > a
-{
-    background-color: #ffbc3b;
+
+.pagination>li>a {
+    background-color: #ECC02E;
     color: white;
     border-radius: 5px;
     margin: 0 4px;
     font-size: 18px;
-
 }
 
-.pagination > li > a:focus,
-.pagination > li > a:hover,
-.pagination > li > span:focus,
-.pagination > li > span:hover
-{
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover {
     color: #5a5a5a;
     background-color: #eee;
     border-color: #ddd;
 }
 
-.pagination > .active > a
-{
+.pagination>.active>a {
     color: white;
     background-color: #01263A !Important;
     border: solid 1px #5A4181 !Important;
     border-radius: 5px;
 }
 
-.pagination > .active > a:hover
-{
+.pagination>.active>a:hover {
     background-color: #5A4181 !Important;
     border: solid 1px #5A4181;
 }
