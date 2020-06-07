@@ -1,4 +1,4 @@
-{% extends 'home/base.html' %} {% load static %} {% block content %}
+{% extends 'home/base.html' %} {% block nav_item_course %}active{% endblock nav_item_course %} {% load static %} {% block content %}
 
 <style>
     .style13 {
@@ -9,6 +9,7 @@
     
     .btn1 {
         border-radius: 10px;
+        background-color: #00162e;
     }
     
     .btn1:hover {
@@ -53,7 +54,7 @@
         padding: .4em .4em .4em 2em;
         *padding: .4em;
         margin: .5em 0;
-        background: rgb(0, 9, 88);
+        background: #00162e;
         color: rgb(255, 255, 255);
         text-decoration: none;
         -moz-border-radius: .3em;
@@ -75,7 +76,7 @@
         left: -1.3em;
         top: 50%;
         margin-top: -1.3em;
-        background: rgb(0, 9, 88);
+        background: #00162e;
         height: 2em;
         width: 2em;
         line-height: 2em;
@@ -130,7 +131,7 @@
                         <ul class="list-inline text-xl-center">
                             <li class="list-inline-item mr-4 mb-3 mb-sm-0">
                                 <div class="d-flex align-items-center">
-                                    <i class="ti-book text-primary icon-md mr-2"></i>
+                                    <i class="ti-user text-primary icon-md mr-2"></i>
                                     <div class="text-left">
                                         <h6 class="mb-0">Taken By</h6>
                                         <p class="mb-0">{{ topic.name_of_teacher }}</p>
@@ -139,7 +140,7 @@
                             </li>
                             <li class="list-inline-item mr-4 mb-3 mb-sm-0">
                                 <div class="d-flex align-items-center">
-                                    <i class="ti-alarm-clock text-primary icon-md mr-2"></i>
+                                    <i class="ti-calendar text-primary icon-md mr-2"></i>
                                     <div class="text-left">
                                         <h6 class="mb-0">Uploaded</h6>
                                         <p class="mb-0">{{ topic.uploaded_time.date }}</p>
@@ -160,7 +161,7 @@
                             <li class="list-inline-item mr-4 mb-3 mb-sm-0">
                                 <div class="d-flex align-items-center">
                                     <div class="text-left">
-                                        <a class="btn btn1 btn-dark mb-4 venobox" href="{{ topic.video_link }}" data-vbtype="video">
+                                        <a class="btn btn1 mb-4 venobox text-white" href="{{ topic.video_link }}" data-vbtype="video">
                                             <i class="ti-control-play"></i>
                                         </a>
                                     </div>
