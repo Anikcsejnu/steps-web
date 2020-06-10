@@ -12,17 +12,17 @@ VERSION:  Versoin Number
 
 /*  typography */
 
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:600,700");
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Ubuntu:600,700");
 @font-face {
-    font-family: 'opensansbold';
-    src: url("../fonts/opensans-bold-webfont.woff") format("woff");
+    font-family: "overlockblack";
+    src: url("../fonts/overlock-black.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }
 
 body {
     line-height: 1.2;
-    font-family: 'Open Sans';
+    font-family: 'Ubuntu', sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: 15px;
     color: #001730;
@@ -36,11 +36,11 @@ abbr[title] {
 
 p,
 .paragraph {
-    font-weight: 450;
+    font-weight: 480;
     color: #001730;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.9;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 h1,
@@ -50,7 +50,7 @@ h4,
 h5,
 h6 {
     color: #001123;
-    font-family: "opensansbold";
+    font-family: "overlockblack";
     font-weight: 700;
     line-height: 1.2;
 }
@@ -132,7 +132,7 @@ h6,
 
 .btn {
     font-size: 16px;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     text-transform: capitalize;
     padding: 15px 40px;
     border-radius: 0;
@@ -302,7 +302,7 @@ ol,
 ul {
     list-style-type: none;
     margin: 0px;
-    font-family: opensansbold;
+    font-family: "overlockblack";
 }
 
 img {
@@ -442,7 +442,7 @@ a h4:hover {
 }
 
 .font-secondary {
-    font-family: "opensansbold";
+    font-family: "overlockblack";
 }
 
 .mb-10 {
@@ -716,7 +716,7 @@ textarea.form-control {
 .card-date {
     position: absolute;
     background: #ECC02E;
-    font-family: "opensansbold";
+    font-family: "overlockblack";
     text-align: center;
     padding: 10px;
     color: #fff;
@@ -803,6 +803,7 @@ textarea.form-control {
 
 .footer {
     border-color: #494a43 !important;
+    min-height: 100px;
     padding-top: 80px;
 }
 
@@ -915,7 +916,7 @@ textarea.form-control {
 .card-blog {
     width: 80%;
     align-content: center;
-    font-family: "opensansbold";
+    font-family: "overlockblack";
     text-align: left;
     padding: 100px;
     color: #eee;
