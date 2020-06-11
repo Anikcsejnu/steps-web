@@ -1,13 +1,24 @@
 {% extends 'home/base.html' %} {% block nav_item_course %}active{% endblock nav_item_course %} {% load static %} {% block content %}
-
+<style>
+    .card {
+        border-radius: 3%;
+        background-color: #f9fcff;
+    }
+</style>
 <!-- page title -->
-<section id="cov" class="section bg-cover" data-background="{% static 'home/images/classroom.png' %}" style="margin-top: -1pt;">
+<div>
+    <div class="card rounded-3 shadow">
+        <img class="card-img-top " src="{% static 'home/images/classroombackground.png' %}" alt="">
+    </div>
+</div>
+<!-- <section class="section bg-cover" data-background="{% static 'home/images/classroombackground.png' %}" style="margin-top: -1pt;">
 
-</section>
+</section> -->
+
 <!-- /page title -->
 
 <!-- courses -->
-<section class="section">
+<section class="section" style="padding-top: 5px;">
     <div class="container">
         <div class="row ">
             <div class="col-12">
@@ -28,8 +39,8 @@
             <!-- course item -->
             {% for course in course_list %}
             <div data-category="{{ course.dept }}" class="col-lg-6 col-sm-3 mb-5 filtr-item">
-                <div class="card p-0 border-primary rounded-0 shadow">
-                    <img class="card-img-top img-thumbnail rounded-0" src="{{ course.thumbnail.url }}" alt="course thumb">
+                <div class="card p-0 border-primary shadow ">
+                    <img class="card-img-top " src="{{ course.thumbnail.url }}" alt="course thumb">
                     <div class="card-body">
                         <ul class="list-inline mb-2">
                             <li class="list-inline-item">{{ course.dept }}</li>
