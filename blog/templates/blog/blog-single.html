@@ -1,19 +1,9 @@
 {% extends 'home/base.html' %} {% block content %} {% load static %}
-<!-- page title -->
-<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <ul class="list-inline custom-breadcrumb">
-                    <li class="list-inline-item h2 text-primary font-secondary">Our Blog</li>
-                    <li class="list-inline-item text-white h3 font-secondary nasted">Blog Details</li>
-                </ul>
-                <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
-            </div>
-        </div>
+<div>
+    <div class="card rounded-3 shadow">
+        <img class="card-img-top " src="{% static 'home/images/blogbackground.png' %}" alt="">
     </div>
-</section>
-<!-- /page title -->
+</div>
 
 <!-- blog details -->
 <section class="section-sm bg-gray">
