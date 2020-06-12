@@ -2,20 +2,9 @@
 
 
 <!-- page title -->
-<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <ul class="list-inline custom-breadcrumb">
-                    <li class="list-inline-item h2 text-primary font-secondary">Our Teacher</li>
-                    <li class="list-inline-item text-white h3 font-secondary nasted">
-                        {{ object.name }}</li>
-                </ul>
-                <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
-            </div>
-        </div>
-    </div>
-</section>
+<div class="card rounded shadow">
+    <img class="card-img-top " src="{% static 'home/images/mentorsbackground.png' %}" alt="">
+</div>
 <!-- /page title -->
 
 <!-- teacher details -->
@@ -28,16 +17,10 @@
             <div class="col-md-6 mb-5">
                 <h3>{{ object.name }}</h3>
                 <h6 class="text-color">{{ object.subject }}, {{ object.institute }}</h6>
-                <p class="mb-5">Here is a short description of our great mentor <big>{{ object.name }}</big> . He is a mentor of
-                    <big>
-            {% for subject in object.mentoring_subject %}
-              {% if forloop.last %}
-                 {{ subject }}
-              {% else %}
-                 {{ subject }},
-              {% endif %}
-            {% endfor %}
-            </big> at steps. He has completed H.S.C from <big>{{ object.college }}</big> in {{ object.hsc_year }} and S.S.C from <big>{{ object.school }}</big> in {{ object.ssc_year }}</p>
+                <p class="h6 mt-3">HSC: {{ object.hsc_year }}, From {{ object.college }}</p>
+                <p class="h6">SSC: {{ object.ssc_year }}, From {{ object.school }}</p>
+                <p class="h6 mb-5">Mentoring Subjects: {% for subject in object.mentoring_subject %} {% if forloop.last %} {{ subject }} {% else %} {{ subject }}, {% endif %} {% endfor %}
+                </p>
                 <div class="row">
                     <div class="col-md-6 mb-5 mb-md-0">
                         <h4 class="mb-4">CONTACT INFO:</h4>
