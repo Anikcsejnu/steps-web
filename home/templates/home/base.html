@@ -80,6 +80,34 @@
         .hv:hover {
             transform: scale(1.2);
         }
+        
+        @media screen and (max-width: 995px) {
+            .ov {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .imov {
+                margin-left: -15%;
+            }
+        }
+        
+        @media screen and (max-width: 767px) {
+            .ov {
+                margin-left: 33%;
+            }
+            .imov {
+                margin-left: -40%;
+            }
+        }
+        
+        @media screen and (max-width: 575px) {
+            .ov {
+                margin-left: 0%;
+            }
+            .imov {
+                margin-left: auto;
+            }
+        }
     </style>
     <!-- header -->
     <header class="header">
@@ -132,9 +160,9 @@
         <div class="footer bg-cover section border-bottom" data-background="{% static 'home/images/footer.png' %}">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4" style="text-align: center; padding: 20px;">
+                    <div class="col-sm-4 ov" style="text-align: center; padding: 20px;">
                         <!-- logo -->
-                        <img src="{% static 'home/images/2.png' %}" alt="" style="width: 267px;height: auto;">
+                        <img src="{% static 'home/images/2.png' %}" alt="" style="width: 267px;height: auto;" class="imov">
                         <ul class="list-unstyled">
                             <li class="mb-2 text-white">Shahjadpur, Dhaka-1212</li>
                             <li class="mb-2 text-white">+880 1922-444626</li>
@@ -142,7 +170,7 @@
                             <li class="mb-2 text-white">omarfaruqe1750@gmail.com</li>
                         </ul>
                     </div>
-                    <div class="col-sm-4" style="text-align: center; padding: 20px;">
+                    <div class="col-sm-4 ov" style="text-align: center; padding: 20px;">
                         <!-- logo -->
                         <h2 class="text-white" style="text-align: center;">Address</h2>
                         <ul class="list-unstyled">
@@ -152,7 +180,7 @@
                             <li class="mb-2 text-white">omarfaruqe1750@gmail.com</li>
                         </ul>
                     </div>
-                    <div class="col-sm-4 " style="text-align: center; padding: 20px;">
+                    <div class="col-sm-4 ov" style="text-align: center; padding: 20px;">
                         <h2 class="text-white" style="text-align: center;">We are on:</h2>
                         <ul class="list-inline">
                             <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.facebook.com/Stepsians-113518887048688/"><i class="fa fa-facebook-square h3 hv text-white" aria-hidden="true"></i></a></li>
