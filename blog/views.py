@@ -40,7 +40,6 @@ def post_blog(request):
          blog.title = MyBlogForm.cleaned_data["title"]
          blog.content = MyBlogForm.cleaned_data["content"]
          blog.status = False
-         blog.image = MyBlogForm.cleaned_data["image"]
          blog.save()
          return redirect('blog')
 	else:
