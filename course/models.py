@@ -2,7 +2,6 @@ from django.db import models
 from django.urls import reverse
 from teacher.models import *
 from django.utils import timezone
-from smart_selects.db_fields import ChainedForeignKey
 
 # Create your models here.
 
