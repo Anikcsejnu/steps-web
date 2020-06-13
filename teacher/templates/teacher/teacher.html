@@ -31,7 +31,7 @@
 
             {% for teacher_detail in teacher_details %}
             <div data-category="{{ teacher_detail.deparment }}" class="col-lg-3 col-sm-6 mb-5 filtr-item">
-                <div class="card border-0 rounded-0 hover-shadow">
+                <div class="card border-0 rounded-0 shadow">
                     <img class="card-img-top rounded-0" src="{{ teacher_detail.image.url }}" alt="teacher">
                     <div class="card-body">
                         <a href="{% url 'teacher' teacher_detail.id %}">
