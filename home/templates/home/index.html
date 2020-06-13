@@ -82,6 +82,25 @@
         border: 0;
         box-shadow: 0 10px 10px -10px #8c8b8b inset;
     }
+    
+    @media screen and (max-width: 995px) {
+        .btnpx {
+            padding: 15px 20px;
+        }
+    }
+    
+    @media screen and (max-width: 355px) {
+        .btnpx {
+            padding: 15px 10px;
+        }
+    }
+    
+    @media screen and (max-width: 315px) {
+        .btnpx {
+            margin-top: 2px;
+            padding: 15px 10px;
+        }
+    }
 </style>
 <section>
     <div class="row" style="align-items: center;">
@@ -106,7 +125,7 @@
             <div class="col-md-6">
                 <h2 class="section-title">About STEPS</h2>
                 <p class="h3 mb-4">We are an online educational platform of Bangladesh by which we are spreading light of education through the window of every student.</p>
-                <a href="{% url 'about' %}" class="btn btn-primary">Learn more</a>
+                <a href="{% url 'about' %}" class="btn btn-primary btnpx">Learn more</a>
             </div>
         </div>
     </div>
@@ -123,8 +142,8 @@
             <div class="col-md-6 ">
                 <h2 class="section-title">Mentors</h2>
                 <p class="h3 mb-4">We were the students of STEPS and now we are the mentors.</p>
-                <a href="{% url 'teacher_hsc' %} " class="btn btn-primary ">Mentors(HSC)</a>
-                <a href="{% url 'teacher_ssc' %} " class="btn btn-primary ">Mentors(SSC)</a>
+                <a href="{% url 'teacher_hsc' %} " class="btn btn-primary btnpx">Mentors(HSC)</a>
+                <a href="{% url 'teacher_ssc' %} " class="btn btn-primary btnpx">Mentors(SSC)</a>
             </div>
 
         </div>
@@ -140,8 +159,8 @@
             <div class="col-md-6">
                 <h2 class="section-title">Classroom</h2>
                 <p class="h3 mb-4">Our classroom is free for all. You can come here anytime, learn through the lectures and get the Notes.</p>
-                <a href="{% url 'courseListHsc' %} " class="btn btn-primary " style="padding: 15px 32px;">Classroom(HSC)</a>
-                <a href="{% url 'courseListSsc' %} " class="btn btn-primary " style="padding: 15px 32px;">Classroom(SSC)</a>
+                <a href="{% url 'courseListHsc' %} " class="btn btn-primary btnpx">Classroom(HSC)</a>
+                <a href="{% url 'courseListSsc' %} " class="btn btn-primary btnpx">Classroom(SSC)</a>
             </div>
             <div class="col-md-6">
                 <img class="img-fluid " src="static/home/images/homeclassroom.png " alt="classroom">
@@ -162,7 +181,7 @@
             <div class="col-md-6">
                 <h2 class="section-title">Blog</h2>
                 <p class="h3 mb-4">Want to share your talent? We have our own blog. You can express your talent here.</p>
-                <a href="{% url 'post_blog' %} " class="btn btn-primary ">Post</a>
+                <a href="{% url 'post_blog' %} " class="btn btn-primary btnpx">Post</a>
             </div>
         </div>
     </div>
