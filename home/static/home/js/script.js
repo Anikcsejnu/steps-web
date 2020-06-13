@@ -36,16 +36,4 @@
     });
 
 
-
-
-    // Aos js
-    AOS.init({
-        once: true
-    });
-
-
-    $('.carousel').carousel({
-        interval: 2000
-    })
-
 })(jQuery);
