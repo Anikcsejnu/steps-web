@@ -9,7 +9,7 @@
 <section class="section" style="padding-top: 5px;">
     <div class="container">
         <div class="row ">
-            <div class="col-12">
+            <div class="col-sm-12">
                 <!-- teacher category list -->
                 <ul class="list-inline text-center filter-controls mb-5">
                     <li class="list-inline-item m-3 text-uppercase active" data-filter="all">All</li>
@@ -30,8 +30,8 @@
             <!-- teacher -->
 
             {% for teacher_detail in teacher_details %}
-            <div data-category="{{ teacher_detail.deparment }}" class="col-lg-3 col-sm-6 mb-5 filtr-item">
-                <div class="card border-0 rounded-0 shadow">
+            <div data-category="{{ teacher_detail.deparment }}" class="col-sm-3 mb-5 filtr-item">
+                <div class="card border-0 rounded-0 shadow mb-1">
                     <img class="card-img-top rounded-0" src="{{ teacher_detail.image.url }}" alt="teacher">
                     <div class="card-body">
                         <a href="{% url 'teacher' teacher_detail.id %}">
@@ -52,11 +52,13 @@
                                 <a class="text-color" href="{{ teacher_detail.linkedin_link }}" target="_blank">
                                     <i class="ti-linkedin"></i></a>
                             </li>
+                            {% if teacher_detail.gender|stringformat:"s" != "Female"|stringformat:"s" %}
                             <li class="list-inline-item"><abbr title="{{ teacher_detail.email }}">
                     <i class="ti-email"></i></abbr></li>
                             <li class="list-inline-item">
                                 <abbr title="{{ teacher_detail.contact_no }}">
                     <i class="ti-mobile"></i></abbr></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
