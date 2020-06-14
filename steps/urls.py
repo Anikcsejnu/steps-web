@@ -26,7 +26,6 @@ urlpatterns = [
     path('teacher/', include('teacher.urls')),
     path('courses/', include('course.urls')),
     path('events/', include('events.urls')),
-    url(r'^chaining/', include('smart_selects.urls')),
     url('gallery/', include('gallery.urls')),
     url('blog/', include('blog.urls')),
 

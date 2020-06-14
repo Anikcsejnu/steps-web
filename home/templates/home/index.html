@@ -4,7 +4,6 @@
     
     .blockquote {
         position: relative;
-        font-family: 'Barlow Condensed', sans-serif;
         max-width: 620px;
         margin: 80px auto;
         align-self: center;
@@ -12,11 +11,12 @@
     /* Blockquote header */
     
     .blockquote h1 {
-        font-family: 'Abril Fatface', cursive;
+        font-family: 'overlockblack';
         position: relative;
         /* for pseudos */
         color: #ff7300;
-        font-size: 2.8rem;
+        font-size: 20px;
+        font-style: italic;
         font-weight: normal;
         line-height: 1;
         margin: 0;
@@ -54,7 +54,7 @@
     
     @media all and (min-width: 600px) {
         .blockquote h1 {
-            font-size: 1rem;
+            font-size: 25px;
             line-height: 1.2;
         }
     }
@@ -76,91 +76,131 @@
     .blockquote h4:first-letter {
         margin-left: -12px;
     }
+    
+    .style13 {
+        height: 10px;
+        border: 0;
+        box-shadow: 0 10px 10px -10px #8c8b8b inset;
+    }
+    
+    @media screen and (max-width: 995px) {
+        .btnpx {
+            padding: 15px 20px;
+        }
+    }
+    
+    @media screen and (max-width: 355px) {
+        .btnpx {
+            padding: 15px 10px;
+        }
+    }
+    
+    @media screen and (max-width: 315px) {
+        .btnpx {
+            margin-top: 2px;
+            padding: 15px 10px;
+        }
+    }
 </style>
 <section>
-    <!--Carousel Wrapper-->
-    <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
-        <!--Carousel Wrapper-->
-        <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
-            <!--Slides-->
-            <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
-                    <div class="view">
-                        <img class="d-block w-100" src="{% static 'home/images/gallerybackground.png' %}" alt="First slide">
-                        <div class="mask rgba-black-light"></div>
-                    </div>
-                    <div class="carousel-caption">
-                        <h3 class="h3-responsive">Light mask</h3>
-                        <p>First text</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <!--Mask color-->
-                    <div class="view">
-                        <img class="d-block w-100" src="{% static 'home/images/gallerybackground.png' %}" alt="Second slide">
-                        <div class="mask rgba-black-strong"></div>
-                    </div>
-                    <div class="carousel-caption">
-                        <h3 class="h3-responsive">Strong mask</h3>
-                        <p>Secondary text</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <!--Mask color-->
-                    <div class="view">
-                        <img class="d-block w-100" src="{% static 'home/images/gallerybackground.png' %}" alt="Third slide">
-                        <div class="mask rgba-black-slight"></div>
-                    </div>
-                    <div class="carousel-caption">
-                        <h3 class="h3-responsive">Slight mask</h3>
-                        <p>Third text</p>
-                    </div>
-                </div>
-            </div>
-            <!--/.Slides-->
-            <!--Controls-->
-            <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-            <!--/.Controls-->
+    <div class="row" style="align-items: center;">
+        <div class="col-sm-6">
+            <h1 class="ml-2 mt-1">Welcome to the community. You are free to learn and share anything.</h1>
         </div>
-        <!--/.Carousel Wrapper-->
+        <div class="col-sm-6">
+            <img class="img-fluid w-100" src="static/home/images/homeclassroom.png" alt="about">
+        </div>
     </div>
 </section>
 
+<hr class="style13">
 
 <!-- about us -->
-<section class="section" style="padding-top:100px;padding-bottom: 5px;">
+<section class="section" style="padding-top:1px;padding-bottom: 5px;">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-12 order-2 order-md-1">
-                <img class="img-fluid w-50" src="static/home/images/about/Tree aboutus.png" alt="about image" style="float: right;">
-                <h2 class="section-title">About <i>STEPS</i></h2>
-                <p>We are an online educational platform of Bangladesh by which we are spreading light of education through the window of every student.</p>
-                <a href="{% url 'about' %}" class="btn btn-primary">Learn more</a>
+            <div class="col-md-6 order-2 order-md-1">
+                <img class="img-fluid w-100" src="static/home/images/about/Tree aboutus.png" alt="about">
+            </div>
+            <div class="col-md-6">
+                <h2 class="section-title">About STEPS</h2>
+                <p class="h3 mb-4">We are an online educational platform of Bangladesh by which we are spreading light of education through the window of every student.</p>
+                <a href="{% url 'about' %}" class="btn btn-primary btnpx">Learn more</a>
             </div>
         </div>
     </div>
 </section>
 <!-- /about us -->
+<hr class="style13">
+<!-- Mentors -->
+<section class="section" style="padding-top:20px;padding-bottom: 5px;">
+    <div class=" container ">
+        <div class="row align-items-center ">
+            <div class="col-md-6">
+                <img class="img-fluid" src="static/home/images/homementors.png " alt="mentors">
+            </div>
+            <div class="col-md-6 ">
+                <h2 class="section-title">Mentors</h2>
+                <p class="h3 mb-4">We were the students of STEPS and now we are the mentors.</p>
+                <a href="{% url 'teacher_hsc' %} " class="btn btn-primary btnpx">Mentors(HSC)</a>
+                <a href="{% url 'teacher_ssc' %} " class="btn btn-primary btnpx">Mentors(SSC)</a>
+            </div>
 
-<section class="section" style="padding-top:100px;padding-bottom: 5px;">
-    <div class="container">
-        <h2 class="section-title">Quote</h2>
-        <div class="list-group-flush">
-            <div class="list-group-item">
-                <div class="row">
-                    <div class="col-sm-3 mt-2">
-                        <img src="static/home/images/about/pv.jpg" class="w-100" alt="" style="border-radius: 50%;">
+        </div>
+    </div>
+</section>
+<!-- /Mentors -->
+<hr class="style13">
+
+<!-- Classroom -->
+<section class="section " style="padding-top:5px;padding-bottom: 5px; ">
+    <div class="container ">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="section-title">Classroom</h2>
+                <p class="h3 mb-4">Our classroom is free for all. You can come here anytime, learn through the lectures and get the Notes.</p>
+                <a href="{% url 'courseListHsc' %} " class="btn btn-primary btnpx">Classroom(HSC)</a>
+                <a href="{% url 'courseListSsc' %} " class="btn btn-primary btnpx">Classroom(SSC)</a>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid " src="static/home/images/homeclassroom.png " alt="classroom">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Classroom -->
+<hr class="style13">
+
+<!-- Blog -->
+<section class="section" style="padding-top:20px;padding-bottom: 30px; ">
+    <div class="container ">
+        <div class="row align-items-center ">
+            <div class="col-md-6">
+                <img class="img-fluid" src="static/home/images/homeblog.png " alt="blog">
+            </div>
+            <div class="col-md-6">
+                <h2 class="section-title">Blog</h2>
+                <p class="h3 mb-4">Want to share your talent? We have our own blog. You can express your talent here.</p>
+                <a href="{% url 'post_blog' %} " class="btn btn-primary btnpx">Post</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Blog -->
+<hr class="style13">
+
+<section class="section " style="padding-top:5px;padding-bottom: 5px; ">
+    <div class="container ">
+        <h2 class="section-title ">Quote</h2>
+        <div class="list-group-flush ">
+            <div class="list-group-item ">
+                <div class="row ">
+                    <div class="col-sm-3 mt-2 ">
+                        <img src="static/home/images/about/pv.jpg " class="w-100 " alt=" " style="border-radius: 50%; ">
                     </div>
-                    <div class="col-sm-9">
-                        <div class="blockquote-wrapper">
-                            <div class="blockquote">
+                    <div class="col-sm-9 ">
+                        <div class="blockquote-wrapper ">
+                            <div class="blockquote ">
                                 <h1>
                                     Either you take lesson from your fault or it will take you to do crime!
                                 </h1>
@@ -170,11 +210,11 @@
                     </div>
                 </div>
             </div>
-            <div class="list-group-item">
-                <div class="row">
-                    <div class="col-sm-9">
-                        <div class="blockquote-wrapper">
-                            <div class="blockquote">
+            <div class="list-group-item ">
+                <div class="row ">
+                    <div class="col-sm-9 ">
+                        <div class="blockquote-wrapper ">
+                            <div class="blockquote ">
                                 <h1>
                                     As success or failure is relative by our perception, find your own definition!
                                 </h1>
@@ -182,8 +222,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-3 mt-2">
-                        <img src="static/home/images/about/ronybhai.jpg" class="w-100" alt="" style="border-radius: 50%;">
+                    <div class="col-sm-3 mt-2 ">
+                        <img src="static/home/images/about/ronybhai.jpg " class="w-100 " alt=" " style="border-radius: 50%; ">
                     </div>
                 </div>
             </div>

@@ -1,19 +1,16 @@
 {% extends 'home/base.html' %} {% block nav_item_gallery %}active{% endblock nav_item_gallery %} {% load static %} {% block content %}
 <style>
-    .card:hover {
-        transform: scale(1.1);
-    }
-    
     .im {
         height: 200px;
         width: 300px;
     }
 </style>
-<!-- page title -->
-<section class="section bg-cover" data-background="{% static 'home/images/gallerybackground.png' %}">
+<div>
+    <div class="card rounded-3 shadow">
+        <img class="card-img-top " src="{% static 'home/images/gallerybackground.png' %}" alt="">
+    </div>
+</div>
 
-</section>
-<!-- /page title -->
 <section>
     <div class="container mb-4 h-100">
         <div class="row">

@@ -30,7 +30,7 @@
     }
     
     .list-type1 {
-        width: 400px;
+        width: 350px;
         margin: 0 auto;
     }
     
@@ -66,7 +66,6 @@
     .list-type1 a:hover {
         background: #fc7f0a;
         text-decoration: none;
-        transform: scale(1.1);
     }
     
     .list-type1 a:before {
@@ -120,7 +119,7 @@
     <!-- course info -->
 
     <div class="row mb-5 border-bottom border-primary">
-        <div class="col-sm-6 border-right">
+        <div class="col-sm-8 border-right">
             <div class="">
                 <h3>
                     <center>Tutorials</center>
@@ -174,18 +173,21 @@
                 </ul>
             </div>
         </div>
-        <div class="col-sm-6 align-right">
+        <div class="col-sm-4 align-right">
             <h3>
                 <center>More Topics</center>
             </h3>
             <hr>
-            <div class="list-type1">
-                <ol>
-                    {% for topic in topiclist %} {% if topic.name_of_topic|stringformat:"s" != topicname|stringformat:"s" %}
-                    <li><a href="{% url 'topicsingle' topic.name_of_topic %}">{{ topic.name_of_topic }}</a></li>
-                    {% endif %} {% endfor %}
-                </ol>
+            <div class="container">
+                <div class="list-type1">
+                    <ol>
+                        {% for topic in topiclist %} {% if topic.name_of_topic|stringformat:"s" != topicname|stringformat:"s" %}
+                        <li><a href="{% url 'topicsingle' topic.name_of_topic %}">{{ topic.name_of_topic }}</a></li>
+                        {% endif %} {% endfor %}
+                    </ol>
+                </div>
             </div>
+
         </div>
     </div>
 </section>

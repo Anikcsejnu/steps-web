@@ -59,6 +59,7 @@ class TeachersInfo(models.Model):
         #default='Test',
     )
 
+	gender = models.CharField(max_length=100, default="")
 	email = models.EmailField(max_length=100)
 	address = models.CharField(max_length=255, help_text='Enter your address')
 	contact_no = models.CharField(max_length=20, help_text='Enter contact no')

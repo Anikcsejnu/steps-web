@@ -135,7 +135,7 @@ h6,
     font-family: 'Ubuntu', sans-serif;
     text-transform: capitalize;
     padding: 15px 40px;
-    border-radius: 0;
+    border-radius: 12px;
     font-weight: 500;
     border: 0;
     position: relative;
@@ -155,8 +155,8 @@ h6,
     transition: -webkit-transform .2s ease-in-out;
     transition: transform .2s ease-in-out;
     transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
-    -webkit-transform-origin: top;
-    transform-origin: top;
+    -webkit-transform-origin: center;
+    transform-origin: center;
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
 }
@@ -173,8 +173,8 @@ h6,
 .btn:hover::before {
     -webkit-transform: scaleY(1);
     transform: scaleY(1);
-    -webkit-transform-origin: bottom;
-    transform-origin: bottom;
+    -webkit-transform-origin: top;
+    transform-origin: top;
 }
 
 .btn-sm {
@@ -920,9 +920,15 @@ textarea.form-control {
     text-align: left;
     padding: 100px;
     color: #eee;
+    border-radius: 12px;
+    background-color: #f9fcff;
+    border: #ecc02e;
+    border-style: solid;
+    border-width: 1px;
 }
 
 .card-blog:hover {
+    animation: 1s ease-in-out;
     transform: scale(1.1);
 }
 
