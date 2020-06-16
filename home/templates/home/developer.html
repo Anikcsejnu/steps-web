@@ -1,0 +1,122 @@
+{% extends 'home/base.html' %}{% block content %}{% load static %}
+<style>
+    .card-img-top {
+        width: 100%;
+        height: 40vh;
+        object-fit: cover;
+    }
+</style>
+<div class="container">
+    <center>
+        <h2 style="border-bottom: 5px solid;">The Team</h2>
+    </center>
+</div>
+<div class="container mt-2">
+    <div class="row">
+        <!-- Anik vai -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-0 shadow">
+                <img src="{% static 'home/images/developer/mamu.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Atiqur Rahman Anik</h5>
+                    <div class="card-text text-black-50">Web Developer</div>
+                </div>
+                <div class="card-body text-center">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/anik.raju.5">
+                                <h2><i class="fa fa-facebook-square"></i></h2>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://github.com/Anikcsejnu">
+                                <h2><i class="fa fa-github"></i></h2>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/atikur-rhaman-b01281121/">
+                                <h2><i class="fa fa-linkedin-square"></i></h2>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.instagram.com/atikur_rhaman_anik/">
+                                <h2><i class="fa fa-instagram"></i></h2>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- PK -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-0 shadow">
+                <img src="{% static 'home/images/developer/ami.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Pankaj Kar</h5>
+                    <div class="card-text text-black-50">Web Developer</div>
+                </div>
+                <div class="card-body text-center">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/pankaj.kar.pck">
+                                <h2><i class="fa fa-facebook-square"></i></h2>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://github.com/Pankaj-Kar">
+                                <h2><i class="fa fa-github"></i></h2>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/pankajkar08/">
+                                <h2><i class="fa fa-linkedin-square"></i></h2>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.instagram.com/p.a.n.k.a.j_k.a.r/">
+                                <h2><i class="fa fa-instagram"></i></h2>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Rahman Shaheb -->
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-0 shadow">
+                <img src="{% static 'home/images/developer/brother.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-0">Abidur Rahman Akash</h5>
+                    <div class="card-text text-black-50">Designer and Artist</div>
+                </div>
+                <div class="card-body text-center">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/thesky.77">
+                                <h2><i class="fa fa-facebook-square"></i></h2>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="">
+                                <h2><i class="fa fa-github"></i></h2>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="">
+                                <h2><i class="fa fa-linkedin-square"></i></h2>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.instagram.com/_____rahman__shaheb____/">
+                                <h2><i class="fa fa-instagram"></i></h2>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+
+{% endblock %}
