@@ -3,6 +3,7 @@ from .models import Blog
 from .form import BlogForm
 from django.views.generic import DetailView
 from django.shortcuts import redirect
+from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
@@ -11,7 +12,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def blog(request):
 	post_list = Blog.objects.filter(status=True).order_by('-time')
 	page = request.GET.get('page', 1)
-	paginator = Paginator(post_list, 10)
+	paginator = Paginator(post_list, 2)
 	try:
 		posts = paginator.page(page)
 	except PageNotAnInteger:
@@ -40,7 +41,9 @@ def post_blog(request):
          blog.title = MyBlogForm.cleaned_data["title"]
          blog.content = MyBlogForm.cleaned_data["content"]
          blog.status = False
+         # blog.image = MyBlogForm.cleaned_data["image"]
          blog.save()
+         messages.success(request, 'Blog posted Successfully!! Please wait for the admin approval!')
          return redirect('blog')
 	else:
 		return render(request, 'blog/post_blog.html')

@@ -12,7 +12,7 @@ class Blog(models.Model):
 	date = models.DateField(default=timezone.now)
 	time = models.TimeField(auto_now=True)
 
-	image = models.ImageField(default='blog_pic/default.jpg', upload_to='blog_pic')
+	image = models.ImageField(default='blog_pic/blog.jpg', upload_to='blog_pic')
 	
 	def __str__(self):
 		return self.title

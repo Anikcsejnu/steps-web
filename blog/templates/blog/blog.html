@@ -1,11 +1,15 @@
 {% extends 'home/base.html' %} {% block nav_item_blog %}active{% endblock nav_item_blog %} {% block content %} {% load static %}
-
 <div>
     <div class="card rounded-3 shadow">
         <img class="card-img-top " src="{% static 'home/images/blogbackground.png' %}" alt="">
     </div>
 </div>
-
+<script>
+     if (sessionStorage.getItem("Page2Visited")) {
+          sessionStorage.removeItem("Page2Visited");
+          window.location.reload(true); // force refresh page1
+     }
+</script>
 <section class="shadow pb-3">
     <center>
         <h2>Even you can post. Just click the button below to add your post.</h2>
@@ -18,6 +22,19 @@
 </section>
 <!-- blogs -->
 <section class="section-blog" style="margin-top: 2px;">
+    {% if messages %}
+        <div class="alert alert-success" role="alert" style="text-align:center; font-size: 24px;margin-bottom: 10px;">
+            {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+
+            {% endfor %}
+
+        </div>
+        <script>
+            sessionStorage.setItem("Page2Visited", "True");
+        </script>  
+    
+    {% endif %}
     {% for posts in postlist %}
     <div class="card-blog shadow p-3 mb-2 mx-auto">
         <div class="row">
@@ -37,7 +54,7 @@
                     <a href="{% url 'blog_single' posts.id %}" class="btn btn-primary btn-sm">read more</a>
                 </div>
             </div>
-            <div class="col-sm-3 mt-1 mb-1">
+            <div class="col-sm-3 mt-1 mb-1 d-none d-sm-block">
                 <div class="row mt-2">
                     <div class="col-sm-1 ml-1">
                         <div class="row">
@@ -118,7 +135,6 @@
         </ul>
         {% endif %}
     </nav>
-
 
 </section>
 <!-- /blogs -->
