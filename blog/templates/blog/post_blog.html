@@ -4,8 +4,8 @@
         backdrop-filter: blur(0px);
         border-style: dashed;
     }
-</style>
 
+</style>
 
 <section class="overlay bg-cover" data-background="{% static 'home/images/writing.jpg' %}">
 
@@ -22,7 +22,7 @@
     <div class="container">
         <!-- post card -->
         <div class="row">
-            <form class="needs-validation pl-2 pr-2 pt-2 pb-2 mb-2 rounded-10 con" action="{% url 'post_blog' %}" method="POST" enctype="multipart/form-data" novalidate>
+            <form class="needs-validation pl-2 pr-2 pt-2 pb-2 mb-2 rounded-10 con" action="{% url 'post_blog' %}" method="POST" enctype="multipart/form-data" autocomplete="off" novalidate>
                 <h2 align="center" class="text-white">Write your post here</h2>
                 <hr> {%csrf_token%}
                 <div class="form-row">
@@ -58,6 +58,7 @@
                 </div>
 
                 <button class="btn btn-primary" type="submit">Submit post</button>
+                 <input id="reloadValue" type="hidden" name="reloadValue" value="" />
             </form>
 
 
