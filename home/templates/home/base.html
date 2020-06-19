@@ -108,13 +108,19 @@
                 margin-left: auto;
             }
         }
+        
+        @media screen and (max-width: 354px) {
+            .tl {
+                width: 150px;
+            }
+        }
     </style>
     <!-- header -->
     <header class="header">
 
         <!-- navbar -->
         <nav class="navbar navbar-custom smart-scroll navbar-expand-lg navbar-dark ">
-            <img src="{% static 'home/images/2.png' %}" alt="" style="width: 267px;height: auto;">
+            <img src="{% static 'home/images/2.png' %}" alt="" class="tl" style="width: 267px;height: auto;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
             </button>

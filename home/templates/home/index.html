@@ -101,14 +101,28 @@
             padding: 15px 10px;
         }
     }
+    
+    .containerr {
+        position: relative;
+    }
+    /* Bottom right text */
+    
+    .text-block {
+        position: absolute;
+        top: 5vw;
+        left: 5vw;
+        background-color: rgb(95, 91, 91, 0.5);
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: auto;
+    }
 </style>
 <section>
-    <div class="row" style="align-items: center;">
-        <div class="col-sm-6">
-            <h1 class="ml-2 mt-2">Welcome to the community. You are free to learn and share anything.</h1>
-        </div>
-        <div class="col-sm-6">
-            <img class="img-fluid w-100" src="static/home/images/homeclassroom.png" alt="about">
+    <div class="containerr">
+        <img src="{% static 'home/images/homebackground.png' %}" alt="home" style="width:100%;">
+        <div class="col-md-4 col-sm-4 col-4 text-block">
+            <h2 class="text-white" style="font-size: 4vw;text-align: center;">Welcome to the community. <br> You are free to learn and share anything.</h2>
         </div>
     </div>
 </section>
