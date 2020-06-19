@@ -25,8 +25,10 @@
                     <div class="col-md-6 mb-5 mb-md-0">
                         <h4 class="mb-4">CONTACT INFO:</h4>
                         <ul class="list-unstyled">
+                            {% if object.gender|stringformat:"s" != "Female"|stringformat:"s" %}
                             <li class="mb-3"><a class="text-color" href="mailto:{{ object.email }}"><i class="ti-email mr-2"></i>{{ object.email }}</a></li>
                             <li class="mb-3"><a class="text-color" href="callto:+{{ object.contact_no }}"><i class="ti-mobile mr-2"></i>+ {{ object.contact_no }}</a></li>
+                            {% endif %}
                             <li class="mb-3"><a class="text-color" href="{{ object.fb_link }}" target="_blank"><i class="ti-facebook mr-2"></i>{{ object.name }}</a></li>
                             <li class="mb-3"><a class="text-color" href="{{ object.linkedin_link }}" target="_blank"><i class="ti-linkedin mr-2"></i>{{ object.name }}</a></li>
                             <li class="mb-3"><a class="text-color"><i class="ti-location-pin mr-2">{{ object.address }}</i></a></li>

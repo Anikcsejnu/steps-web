@@ -108,13 +108,19 @@
                 margin-left: auto;
             }
         }
+        
+        @media screen and (max-width: 354px) {
+            .tl {
+                width: 150px;
+            }
+        }
     </style>
     <!-- header -->
     <header class="header">
 
         <!-- navbar -->
         <nav class="navbar navbar-custom smart-scroll navbar-expand-lg navbar-dark ">
-            <img src="{% static 'home/images/2.png' %}" alt="" style="width: 267px;height: auto;">
+            <img src="{% static 'home/images/2.png' %}" alt="" class="tl" style="width: 267px;height: auto;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
             </button>
@@ -164,39 +170,42 @@
                         <!-- logo -->
                         <img src="{% static 'home/images/2.png' %}" alt="" style="width: 267px;height: auto;" class="imov">
                         <ul class="list-unstyled">
+                            <li class="mb-2 text-white">STEPS Academic and Admission Care</li>
                             <li class="mb-2 text-white">Shahjadpur, Dhaka-1212</li>
                             <li class="mb-2 text-white">+880 1922-444626</li>
                             <li class="mb-2 text-white">+880 1678-231110</li>
-                            <li class="mb-2 text-white">omarfaruqe1750@gmail.com</li>
                         </ul>
                     </div>
                     <div class="col-sm-4 ov" style="text-align: center; padding: 20px;">
                         <!-- logo -->
-                        <h2 class="text-white" style="text-align: center;">Address</h2>
+                        <h2 class="text-white" style="text-align: center;">About</h2>
                         <ul class="list-unstyled">
-                            <li class="mb-2 text-white">Shahjadpur, Dhaka-1212</li>
-                            <li class="mb-2 text-white">+880 1922-444626</li>
-                            <li class="mb-2 text-white">+880 1678-231110</li>
-                            <li class="mb-2 text-white">omarfaruqe1750@gmail.com</li>
+                            <li class="mb-2 text-white"> <a href="" class="text-white">Team STEPS</a></li>
+                            <li class="mb-2 text-white">Android App(Coming Soon)</li>
+                            <li class="mb-2 text-white">IOS App(Coming Soon)</li>
+                            <li class="mb-2 text-white">Magazine(Coming Soon)</li>
                         </ul>
                     </div>
                     <div class="col-sm-4 ov" style="text-align: center; padding: 20px;">
-                        <h2 class="text-white" style="text-align: center;">We are on:</h2>
+                        <h2 class="text-white" style="text-align: center;">We are on</h2>
                         <ul class="list-inline">
-                            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.facebook.com/Stepsians-113518887048688/"><i class="fa fa-facebook-square h3 hv text-white" aria-hidden="true"></i></a></li>
-                            <li class="list-inline-item"><a class="d-inline-block p-2" href="https://www.facebook.com/groups/593585494697269/"><i class="fa fa-users h3 hv text-white" aria-hidden="true"></i></a></li>
-                            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i class="fa fa-youtube-play h3 hv text-white" aria-hidden="true"></i></a></li>
+                            <li class="list-inline-item"><abbr title="Facebook Page"><a class="d-inline-block p-2" href="https://www.facebook.com/Stepsians-113518887048688/"><i class="fa fa-facebook-square h3 hv text-white" aria-hidden="true"></i></a></abbr></li>
+                            <li class="list-inline-item"><abbr title="Facebook Group"><a class="d-inline-block p-2" href="https://www.facebook.com/groups/593585494697269/"><i class="fa fa-users h3 hv text-white" aria-hidden="true"></i></a></abbr></li>
+                            <li class="list-inline-item"><abbr title="Youtube"><a class="d-inline-block p-2" href="https://www.youtube.com/channel/UCtNqYUh6N2jd8-lIrJfZgPw"><i class="fa fa-youtube-play h3 hv text-white" aria-hidden="true"></i></a></abbr></li>
+                            <li class="list-inline-item"><abbr title="Instagram"><a class="d-inline-block p-2" href="https://www.instagram.com/_stepsians_/"><i class="fa fa-instagram h3 hv text-white" aria-hidden="true"></i></a></abbr></li>
+                            <li class="list-inline-item"><abbr title="Twitter"><a class="d-inline-block p-2" href="https://twitter.com/stepsians"><i class="fa fa-twitter-square h3 hv text-white" aria-hidden="true"></i></a></abbr></li>
                         </ul>
                     </div>
                     <hr style="border-top: 1px solid rgba(210, 90, 90, 0.1);
                     width: 100%;">
                     <div class="col-sm-12">
-                        <p class="text-white" style="text-align: center;">Copyright
+                        <p class="text-white" style="text-align: center;">©
                             <script>
                                 var CurrentYear = new Date().getFullYear()
                                 document.write(CurrentYear)
                             </script>
-                            © STEPS IT</p>
+                            <a href="{% url 'developer' %}" class="" style="color: #ECC02E;"> <b>STEPS IT</b> </a>
+                        </p>
                     </div>
                 </div>
             </div>
