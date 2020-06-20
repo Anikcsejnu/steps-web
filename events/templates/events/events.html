@@ -22,14 +22,15 @@
             </div>
             <div class="row filtr-container">
                 <!-- event -->
-                {% for event in events %} {% if event.date > today %}
-                <div data-category="upcoming" class="col-lg-4 col-sm-6 mb-5 filtr-item">
-                    {% elif event.date == today %}
-                    <div data-category="today" class="col-lg-4 col-sm-6 mb-5 filtr-item">
-                        {% else %}
-                        <div data-category="eairlier" class="col-lg-4 col-sm-6 mb-5 filtr-item">
-                            {% endif %}
+                {% for event in events %} 
 
+                    {% if event.date > today %}
+                        <div data-category="upcoming" class="col-lg-4 col-sm-6 mb-5 filtr-item">
+                    {% elif event.date == today %}
+                        <div data-category="today" class="col-lg-4 col-sm-6 mb-5 filtr-item">
+                    {% else %}
+                        <div data-category="eairlier" class="col-lg-4 col-sm-6 mb-5 filtr-item">
+                    {% endif %}
                             <div class="card border-0 rounded-0 shadow mt-3">
                                 <div class="card-img position-relative">
                                     <img class="card-img-top rounded-0" src="{{ event.banner.url }}" alt="event thumb">
@@ -44,9 +45,7 @@
                                 </div>
                             </div>
                         </div>
-                        {% endfor %}
-                    </div>
-                </div>
+                {% endfor %}
             </div>
 
             <nav aria-label="Page navigation example">
