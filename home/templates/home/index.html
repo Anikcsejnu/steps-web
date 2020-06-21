@@ -83,6 +83,19 @@
         box-shadow: 0 10px 10px -10px #8c8b8b inset;
     }
     
+    .containerr {
+        position: relative;
+    }
+    /* Bottom right text */
+    
+    .text-block {
+        position: absolute;
+        top: 8vw;
+        left: 1vw;
+        padding-left: 15px;
+        padding-right: 20px;
+    }
+    
     @media screen and (max-width: 995px) {
         .btnpx {
             padding: 15px 20px;
@@ -101,28 +114,12 @@
             padding: 15px 10px;
         }
     }
-    
-    .containerr {
-        position: relative;
-    }
-    /* Bottom right text */
-    
-    .text-block {
-        position: absolute;
-        top: 5vw;
-        left: 5vw;
-        background-color: rgb(95, 91, 91, 0.5);
-        color: white;
-        padding-left: 20px;
-        padding-right: 20px;
-        margin-bottom: auto;
-    }
 </style>
 <section>
     <div class="containerr">
         <img src="{% static 'home/images/homebackground.png' %}" alt="home" style="width:100%;">
-        <div class="col-md-4 col-sm-4 col-4 text-block">
-            <h2 class="text-white" style="font-size: 4vw;text-align: center;">Welcome to the community. <br> You are free to learn and share anything.</h2>
+        <div class="col-md-5 col-sm-5 col-5 text-block">
+            <h1 class="" style="font-size: 6vw;text-align: center;color: #001123;">" A platform for the best of the best "</h1>
         </div>
     </div>
 </section>
@@ -137,7 +134,7 @@
                 <img class="img-fluid w-100" src="static/home/images/about/Tree aboutus.png" alt="about">
             </div>
             <div class="col-md-6">
-                <h2 class="section-title">About STEPS</h2>
+                <h2 class="section-title">About STEPSians</h2>
                 <p class="h3 mb-4">We are an online educational platform of Bangladesh by which we are spreading light of education through the window of every student.</p>
                 <a href="{% url 'about' %}" class="btn btn-primary btnpx">Learn more</a>
             </div>
@@ -194,7 +191,7 @@
             </div>
             <div class="col-md-6">
                 <h2 class="section-title">Blog</h2>
-                <p class="h3 mb-4">Want to share your talent? We have our own blog. You can express your talent here.</p>
+                <p class="h3 mb-4">Want to share your ideas, writings or thoughts? We have our own blog. You can express your ideas, writings or thoughts here.</p>
                 <a href="{% url 'post_blog' %} " class="btn btn-primary btnpx">Post</a>
             </div>
         </div>

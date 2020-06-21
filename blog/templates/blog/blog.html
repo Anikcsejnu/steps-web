@@ -5,14 +5,14 @@
     </div>
 </div>
 <script>
-     if (sessionStorage.getItem("Page2Visited")) {
-          sessionStorage.removeItem("Page2Visited");
-          window.location.reload(true); // force refresh page1
-     }
+    if (sessionStorage.getItem("Page2Visited")) {
+        sessionStorage.removeItem("Page2Visited");
+        window.location.reload(true); // force refresh page1
+    }
 </script>
 <section class="shadow pb-3">
     <center>
-        <h2>Even you can post. Just click the button below to add your post.</h2>
+        <h2>Write Your Post</h2>
     </center>
     <center>
         <div>
@@ -23,19 +23,18 @@
 <!-- blogs -->
 <section class="section-blog" style="margin-top: 2px;">
     {% if messages %}
-        <div class="alert alert-success" role="alert" style="text-align:center; font-size: 24px;margin-bottom: 10px;">
-            {% for message in messages %}
-                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    <div class="alert alert-success" role="alert" style="text-align:center; font-size: 24px;margin-bottom: 10px;">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
 
-            {% endfor %}
+        {% endfor %}
 
-        </div>
-        <script>
-            sessionStorage.setItem("Page2Visited", "True");
-        </script>  
-    
-    {% endif %}
-    {% for posts in postlist %}
+    </div>
+    <script>
+        sessionStorage.setItem("Page2Visited", "True");
+    </script>
+
+    {% endif %} {% for posts in postlist %}
     <div class="card-blog shadow p-3 mb-2 mx-auto">
         <div class="row">
             <div class="col-sm-2">
