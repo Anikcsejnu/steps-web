@@ -12,7 +12,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def blog(request):
 	post_list = Blog.objects.filter(status=True).order_by('-time')
 	page = request.GET.get('page', 1)
-	paginator = Paginator(post_list, 2)
+	paginator = Paginator(post_list, 10)
 	try:
 		posts = paginator.page(page)
 	except PageNotAnInteger:
