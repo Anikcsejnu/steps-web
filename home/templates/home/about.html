@@ -8,19 +8,11 @@
     }
 </style>
 <!-- page title -->
-<section class="page-title-section overlay" data-background="{% static 'home/images/backgrounds/page-title.jpg' %}">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <ul class="list-inline custom-breadcrumb">
-                    <li class="list-inline-item h2 text-primary font-secondary">About Us</li>
-                    <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
-                </ul>
-                <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
-            </div>
-        </div>
+<div>
+    <div class="card rounded-3 shadow">
+        <img class="card-img-top " src="{% static 'home/images/aboutbackground.png' %}" alt="">
     </div>
-</section>
+</div>
 <!-- /page title -->
 
 <!-- about -->
@@ -31,11 +23,11 @@
                 <h2 class="section-title">ABOUT OUR JOURNY</h2>
 
                 <abbr title="STEPS Iftar 2019"><img class="img-fluid w-75 mb-2 ml-3" src="{% static 'home/images/about/team.jpg' %}" alt="about image" style="float: right;"></abbr>
-                <p>Two Friends; two dreamers; dreamt in their college life to do something; do something for our education system; for the Bangladeshi students.They wanted to make a platform where they could bring the students to a new horizon of their life.
-                    One of them got chance in Buet and other was in Dhaka University.The milestone might be founded in the basis of this phenomena. They founded a co-educational platform named "steps" so that they could help the students like them who
-                    had enough potential and make them bloom. They made the things easier for the students to get chance in reputed universities.Every year few students got chance in public universities and they also joined at steps to contribute as well.They
-                    also became the heroes of new students; became an ideal stepsian. During the pandemic of corona, parvej and rony, two pioneer, again founded this online platform named "STEPSIANS" with the stepsians to support all the students from
-                    home and the endless journey started, and obviously it is free.</p>
+                <p>Two Friends; two dreamers; dreamt in their college life to do something; do something for our education system; for the Bangladeshi students. They wanted to make a platform where they could bring the students to a new horizon of their
+                    life. One of them got chance in BUET and other was in University of Dhaka. The milestone might be founded in the basis of this phenomena. They founded a co-educational platform named "STEPS" so that they could help the students like
+                    them who had enough potential and make them bloom. They made the things easier for the students to get chance in reputed universities. Every year few students got chance in public universities and they also joined at STEPS to contribute
+                    as well. They also became the heroes of new students; became an ideal stepsians. During the pandemic of corona, Parvej and Rony, two pioneer, again founded this online platform named "STEPSians" with the stepsians to support all the
+                    students from home and the endless journey started, and obviously it is free.</p>
             </div>
         </div>
     </div>
@@ -51,7 +43,7 @@
                 <abbr title="Our Classrooms"><img class="img-fluid w-75" src="{% static 'home/images/about/Tree aboutus.png' %}" alt="about image" style="float: right;"></abbr>
                 <h2 class="section-title" style="margin-top: 0px;">WHAT WE TEACH</h2>
                 <p style="margin-top: 0px;">We believe that there is no boundary of teaching and learning. Hence you will find here both the academic lessons and sometimes you will be introduced with the lesson out of the box. In academic lessons we will support from the very begining
-                    even it could be play group students to job preperations of freshly baked graduate. In non academic section you can get some skill development lessons of every aspects of life so far we can go.
+                    even it could be play group students to job preperations of freshly baked graduates. In non academic section you can get some skill development lessons of every aspects of life so far we can go.
                 </p>
             </div>
         </div>
@@ -65,24 +57,24 @@
     <div class="container">
         <div class="row">
             <!-- funfacts item -->
-            <div class="col-md-4 col-sm-3 mb-4 mb-md-0">
+            <div class="col-lg-4 col-sm-3 mb-4 mb-md-0">
                 <div class="text-center">
                     <h2 class="text-white">{{ number_of_teacher }}</h2>
                     <h5 class="text-white">TEACHERS</h5>
                 </div>
             </div>
             <!-- funfacts item -->
-            <div class="col-md-4 col-sm-3 mb-4 mb-md-0">
+            <div class="col-lg-4 col-sm-3 mb-4 mb-md-0">
                 <div class="text-center">
                     <h2 class="text-white">{{ number_of_course }}</h2>
                     <h5 class="text-white">COURSES</h5>
                 </div>
             </div>
             <!-- funfacts item -->
-            <div class="col-md-4 col-sm-3 mb-4 mb-md-0">
+            <div class="col-lg-4 col-sm-3 mb-4 mb-md-0">
                 <div class="text-center">
-                    <h2 class="count text-white">1000</h2>
-                    <h5 class="text-white">STUDENTS</h5>
+                    <h2 class="text-white">{{ number_of_tutorial }}</h2>
+                    <h5 class="text-white">TUTORIALS</h5>
                 </div>
             </div>
 
@@ -148,7 +140,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                             <h4>01922444626</h4>
-                                            <h4>01232131312</h4>
+                                            <h4>01882131962</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -210,7 +202,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                             <h4>01678231110</h4>
-                                            <h4>01232132131</h4>
+                                            <h4>01737157420</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -218,7 +210,7 @@
                                     <h5 class="mb-0"> <i class="fa fa-facebook-square h3 mr-1" aria-hidden="true"></i> <a href="https://www.facebook.com/raqibhossain.rony" style="color: #001123;">Raqib Hossain Rony</a> </h5>
                                 </div>
                                 <div class="list-group-item">
-                                    <h5 class="mb-0"><i class="fa fa-linkedin-square h3 mr-1" aria-hidden="true"></i>Raqib Hossain Rony</h5>
+                                    <h5 class="mb-0"><i class="fa fa-linkedin-square h3 mr-1" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/raqib-hossain-rony-3846a7b3/" style="color: #001123;">Raqib Hossain Rony</a> </h5>
 
                                 </div>
                             </div>

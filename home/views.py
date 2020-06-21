@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from course.models import Course
+from course.models import Tutorial, Course
 from teacher.models import TeachersInfo
 import random
 
@@ -11,10 +11,11 @@ def index(request):
 
 
 def about(request):
-	print(TeachersInfo.objects.all().count(), Course.objects.all().count())
+	#print(TeachersInfo.objects.all().count(), Tutorial.objects.all().count())
 	context = {
 		'number_of_teacher':TeachersInfo.objects.all().count(),
-		'number_of_course':Course.objects.all().count(),
+		'number_of_course' : Course.objects.all().count(),
+		'number_of_tutorial':Tutorial.objects.all().count(),
 	}
 	return render(request, 'home/about.html', context)
 
