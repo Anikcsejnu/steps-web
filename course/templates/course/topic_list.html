@@ -1,5 +1,6 @@
 {% extends 'home/base.html' %} {% block nav_item_course %}active{% endblock nav_item_course %} {% block content %}
-<!-- <style>
+
+<style>
     .h:hover {
         color: #ffffff;
     }
@@ -75,23 +76,22 @@
         border-radius: 2em;
         color: #FFF;
     }
-</style> -->
+</style>
+<section class="page-title-section bg-cover overlay" data-background="{{ coursename.background.url }}">
 
-<!-- 
-<section class="page-title-section bg-cover overlay" data-background="{{ coursename.background.url }}"> -->
-    <!-- <div class="container">
+	<div class="container">
         <div class="row mt-5">
             <div class="col-md-12">
                 <ul class="list-inline custom-breadcrumb mt-5">
                     <li class="list-inline-item h2 text-primary font-secondary">Classroom</li>
-                    <li class="list-inline-item text-white h3 font-secondary nasted"><a href="{% url 'chapterlist' coursename %}" class="text-white lit">{{ coursename }}</a></li>
+                    <li class="list-inline-item text-white h3 font-secondary nasted"><a href="{% url 'chapterlist' coursename.id %}" class="text-white lit">{{ coursename }}</a></li>
                     <li class="list-inline-item text-white h3 font-secondary nasted">{{ chaptername }}</li>
                 </ul>
             </div>
         </div>
-    </div> -->
-<!-- </section> -->
-<!-- <section class="">
+    </div>
+</section>
+<section class="">
     <div class="row mb-5 border-bottom border-primary">
         <div class="col-sm-7 border-right shadow">
             <div class="">
@@ -115,8 +115,8 @@
                     </div>
                 </div>
             </div>
-        </div> -->
-       <!--  <div class="col-sm-5 align-right shadow">
+        </div>
+       <div class="col-sm-5 align-right shadow">
             <h1 class=" pb-2 pt-2">
                 <center>Other Chapters</center>
             </h1>
@@ -124,14 +124,13 @@
             <div class="list-type1">
                 <ol>
                     {% for chapter in chapterlist %} {% if chapter.name_of_chapter|stringformat:"s" != chaptername|stringformat:"s" %}
-                    <li><a href="{% url 'topiclist' chapter.name_of_chapter %}">{{ chapter.name_of_chapter }}</a></li>
+                    <li><a href="{% url 'topiclist' chapter.id %}">{{ chapter.name_of_chapter }}</a></li>
                     {% endif %} {% endfor %}
                 </ol>
             </div>
         </div>
     </div> -->
-<!-- </section> -->
-
+</section>
 
 
 {% endblock %}

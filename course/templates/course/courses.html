@@ -43,7 +43,7 @@
                         <ul class="list-inline mb-2">
                             <li class="list-inline-item">{{ course.dept }}</li>
                         </ul>
-                        <a href="{% url 'chapterlist' course.name %}">
+                        <a href="{% url 'chapterlist' course.id %}">
                             <h4 class="card-title">{{ course.name }}</h4>
                         </a>
                         <p class="card-text mb-4"> {{ course.short_details }}</p>

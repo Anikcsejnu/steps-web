@@ -9,10 +9,12 @@ def gallery(request):
     return render(request, 'gallery/gallery.html', context)
 
 
-def gallerySingle(request, galleryname):
+def gallerySingle(request, galleryid):
+
+    print(galleryid)
     
     context = {
-        'gallery': Gallery.objects.filter(gallery_name=galleryname).first(),
-        'galleryImages': GalleryImage.objects.filter(gallery_name__gallery_name=galleryname),
+        'gallery': Gallery.objects.filter(pk=galleryid).first(),
+        'galleryImages': GalleryImage.objects.filter(gallery_name_id=galleryid).all(),
     }
     return render(request, 'gallery/gallerysingle.html', context)

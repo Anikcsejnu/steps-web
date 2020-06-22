@@ -8,29 +8,75 @@
 
 <!-- courses -->
 <section class="section-blog" style="padding-top: 5px;">
-    <div class="container">
-        <div class="row ">
-            <div class="col-12">
-                <!-- teacher category list -->
-                <ul class="list-inline text-center filter-controls mb-5">
-                    <li class="list-inline-item m-3 text-uppercase active" data-filter="all">All</li>
-                    <li class="list-inline-item m-3 text-uppercase" data-filter="upcoming">Upcoming
-                    </li>
-                    <li class="list-inline-item m-3 text-uppercase" data-filter="today">On going</li>
-                    <li class="list-inline-item m-3 text-uppercase" data-filter="eairlier">Earlier</li>
-                </ul>
-            </div>
-            <div class="row filtr-container">
+    <style>
+.filterDiv {
+  float: left;
+  color: #ffffff;
+  width: 350px;
+  text-align: left;
+  margin: 2px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 8px;  
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.container {
+  margin-top: 10px;
+  overflow: hidden;
+  position: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+.center {
+  margin: auto;
+  width: 100%;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+<section>
+
+
+<div class="container center">
+<div id="myBtnContainer">
+<div class="row center">
+<div class="col-12" style="text-align:center;padding-top: 20px;">
+  <button class="btn" onclick="filterSelection('all')"> All</button>
+  <button class="btn" onclick="filterSelection('upcoming')"> Upcoming</button>
+  <button class="btn" onclick="filterSelection('today')"> On going </button>
+  <button class="btn" onclick="filterSelection('eairlier')">Earlier</button>
+</div>
+
+<div class="container">
                 <!-- event -->
                 {% for event in events %} 
 
                     {% if event.date > today %}
-                        <div data-category="upcoming" class="col-lg-4 col-sm-6 mb-5 filtr-item">
+                        <div class="filterDiv upcoming col-lg-4 col-sm-6 mb-5 center" >
                     {% elif event.date == today %}
-                        <div data-category="today" class="col-lg-4 col-sm-6 mb-5 filtr-item">
+                        <div class="filterDiv today col-lg-4 col-sm-6 mb-5">
                     {% else %}
-                        <div data-category="eairlier" class="col-lg-4 col-sm-6 mb-5 filtr-item">
+                        <div class="filterDiv eairlier col-lg-4 col-sm-6 mb-5">
                     {% endif %}
+                            
                             <div class="card border-0 rounded-0 shadow mt-3">
                                 <div class="card-img position-relative">
                                     <img class="card-img-top rounded-0" src="{{ event.banner.url }}" alt="event thumb">
@@ -47,6 +93,58 @@
                         </div>
                 {% endfor %}
             </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+    
+
 
             <nav aria-label="Page navigation example">
                 {% if events.has_other_pages %}

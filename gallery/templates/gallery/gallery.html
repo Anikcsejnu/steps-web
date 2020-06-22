@@ -27,7 +27,7 @@
         <div class="row filtr-container">
             {% for gallery in galleries %}
             <div class="col-sm-12 col-lg-4 mb-2 filtr-item" data-category="{{ gallery.gallery_type }}">
-                <a href="{% url 'gallerysingle' gallery.gallery_name %}">
+                <a href="{% url 'gallerysingle' gallery.id %}">
                     <!-- Card Wider -->
                     <div class="card h-100 shadow">
                         <div class="">
